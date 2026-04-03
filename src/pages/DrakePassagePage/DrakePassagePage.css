@@ -1,0 +1,3818 @@
+/* ========================================
+   ROOT VARIABLES - DRAKE PASSAGE DESIGN
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Color Palette (Hash Codes) */
+  --navy: #274472;
+  --navy-light: #274472cc;
+  --gold: #274472;
+  /* Changed to Navy Blue */
+
+  /* Background Variations */
+  --bg-white: #ffffff;
+  --bg-soft: rgb(231, 243, 245);
+  /* Light Blue */
+  --bg-cream: rgb(231, 243, 245);
+  /* Changed from cream to Light Blue */
+  --bg-dark: #0f1c2e;
+  --bg-dark2: #1c2f4a;
+
+  /* Font Families */
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Montserrat', sans-serif;
+
+  /* Header Specifics */
+  --header-navy: #1c355e;
+  --header-font: 'Montserrat', sans-serif;
+  --logo-font: 'Playfair Display', serif;
+}
+
+/* Base Body Setup */
+body {
+  font-family: var(--font-body) !important;
+  color: var(--navy);
+  background: var(--bg-white);
+  overflow-x: hidden;
+}
+
+/* ========================================
+   HERO SECTION
+   Main hero with animated background, particles effect, eyebrow title, heading, and call-to-action buttons
+   ======================================== */
+
+/* ── HERO ── */
+.drake-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 140px 40px 100px;
+  position: relative;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  animation: drake-bgSlide 18s infinite ease-in-out;
+  overflow: hidden;
+}
+
+.drake-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0.4) 100%);
+  z-index: 1;
+}
+
+/* Animated particles effect */
+.drake-hero::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: drake-snowfall 60s linear infinite;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes drake-bgSlide {
+
+  0%,
+  100% {
+    background-image: url('../../assets/DrakePassage/Hero1.jpeg');
+  }
+
+  33% {
+    background-image: url('../../assets/DrakePassage/Hero2.jpeg');
+  }
+
+  66% {
+    background-image: url('../../assets/DrakePassage/Hero3.jpeg');
+  }
+}
+
+@keyframes drake-snowfall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(100px) rotate(5deg);
+  }
+}
+
+.drake-hero-content {
+  max-width: 850px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  animation: drake-fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.drake-hero-eyebrow {
+  font-size: 12px !important;
+  letter-spacing: 4px !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  text-transform: uppercase !important;
+  margin-bottom: 24px;
+  display: block;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.drake-hero h1 {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 400 !important;
+  line-height: 1.1 !important;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+  font-size: 60px !important;
+}
+
+.hero-sub {
+  font-size: 17px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 32px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  animation: fadeInUp 0.8s ease-out 0.7s both;
+}
+
+.hero-lead {
+  font-size: 18px;
+  line-height: 1.8;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 16px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeInUp 0.8s ease-out 0.9s both;
+}
+
+.hero-note {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+  margin-bottom: 16px;
+  transition: all 0.4s ease;
+}
+
+.hero-details .hero-note {
+  margin: 0 auto 16px;
+}
+
+/* Hero Details with Read More */
+.hero-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.hero-details.expanded {
+  max-height: 500px;
+}
+
+.hero-details .hero-note {
+  margin: 0 0 14px 0;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+to {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.drake-hero-eyebrow {
+  font-size: 12px !important;
+  letter-spacing: 5px !important;
+  font-weight: 600 !important;
+  color: var(--gold);
+  text-transform: uppercase !important;
+  margin-bottom: 24px;
+  display: block;
+}
+
+.drake-hero-sub {
+  font-size: 18px !important;
+  font-style: italic !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  margin-bottom: 35px;
+  font-weight: 300 !important;
+  letter-spacing: 0.5px !important;
+}
+
+.drake-hero-lead {
+  line-height: 1.8 !important;
+  font-weight: 300 !important;
+  color: #ffffff;
+  margin-bottom: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+/* Hero Details with Read More Interaction */
+.drake-hero-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.drake-hero-details.expanded {
+  max-height: 600px;
+  margin-top: 20px;
+}
+
+.drake-hero-note {
+  font-size: 16px !important;
+  line-height: 1.8 !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-weight: 300 !important;
+  margin-bottom: 16px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.drake-hero-read-more {
+  display: inline-block;
+  margin: 10px 0 35px 0;
+  background: transparent;
+  border: none;
+  color: #ffffff !important;
+  padding: 8px 0;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif !important;
+  border-bottom: 1px solid #ffffff;
+}
+
+.drake-hero-read-more:hover {
+  color: #ffffff !important;
+  border-bottom-color: #ffffff;
+}
+
+.drake-hero-btns {
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.drake-btn-primary {
+  background: #ffffff;
+  color: #000000;
+  padding: 18px 44px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  font-size: 12px !important;
+  letter-spacing: 1.5px !important;
+  /* font-family: var(--font-body) !important; */
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.drake-btn-primary:hover {
+  background: #274472;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.drake-btn-secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: #fff;
+  padding: 18px 44px;
+  cursor: pointer;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  letter-spacing: 1.5px !important;
+  /* font-family: var(--font-body) !important; */
+  transition: all 0.3s ease;
+  text-transform: uppercase !important;
+  border-radius: 4px;
+}
+
+.drake-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .drake-hero h1 {
+    font-size: 32px !important;
+  }
+
+  .drake-hero-lead {
+    font-size: 17px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .drake-hero {
+    padding: 120px 30px 80px;
+  }
+
+  .drake-hero h1 {
+    font-size: 32px !important;
+  }
+
+  .drake-hero h2 {
+    font-size: 28px !important;
+  }
+
+  .drake-hero p,
+  .drake-hero h3 {
+    font-size: 17px !important;
+  }
+
+  .drake-hero-lead {
+    font-size: 17px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .drake-hero {
+    padding: 120px 20px 80px;
+  }
+
+  .drake-hero h1 {
+    font-size: 26px !important;
+  }
+
+  .drake-hero h2 {
+    font-size: 24px !important;
+  }
+
+  .drake-hero p,
+  .drake-hero h3 {
+    font-size: 16px !important;
+  }
+
+  .drake-hero-btns {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .drake-btn-primary,
+  .drake-btn-secondary {
+    width: 100%;
+    padding: 16px 20px;
+  }
+}
+
+/* ========================================
+   SHARED SECTION STYLES
+   Base section layouts, backgrounds, headings, paragraphs, and read-more buttons
+   ======================================== */
+
+/* ── SHARED SECTION ── */
+.drake-section {
+  padding: 90px 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.drake-section-inner {
+  max-width: 950px;
+  width: 100%;
+}
+
+.drake-section-inner.wide {
+  max-width: 1100px;
+}
+
+.drake-section-inner.narrow {
+  max-width: 750px;
+}
+
+.drake-bg-white {
+  background: var(--bg-white);
+}
+
+.drake-bg-soft {
+  background: var(--bg-soft);
+}
+
+.drake-bg-cream {
+  background: var(--bg-cream);
+}
+
+.drake-bg-dark {
+  background: linear-gradient(135deg, var(--bg-dark), var(--bg-dark2));
+}
+
+/* ── HEADINGS ── */
+.drake-section-h2 {
+  font-family: var(--font-display) !important;
+  font-size: 48px !important;
+  font-weight: 500 !important;
+  color: var(--navy);
+  margin-bottom: 30px;
+  line-height: 1 !important;
+  text-align: center;
+  position: relative;
+}
+
+.drake-section-h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: var(--navy);
+  margin: 16px auto 0;
+  border-radius: 2px;
+}
+
+.drake-section-h2.left-bar::after {
+  margin: 16px 0 0;
+}
+
+.drake-section-h2.white {
+  color: #fff;
+}
+
+.drake-section-h2.white::after {
+  background: #fff;
+}
+
+.drake-section-h2.gold-bar::after {
+  background: var(--gold);
+}
+
+/* ── READ MORE BUTTON ── */
+.drake-read-more-btn {
+  display: block;
+  margin: 20px auto 0;
+  background: transparent;
+  border: none;
+  color: var(--navy);
+  padding: 8px 0;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-body) !important;
+  text-transform: uppercase !important;
+  text-decoration: none;
+  position: relative;
+}
+
+.drake-read-more-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 1px;
+  background: var(--navy);
+  transition: width 0.3s ease;
+}
+
+.drake-read-more-btn:hover {
+  color: var(--navy);
+  opacity: 0.7;
+}
+
+.drake-read-more-btn:hover::after {
+  width: 100%;
+}
+
+/* ── PARAGRAPHS ── */
+.drake-section-p,
+h3 {
+  font-size: 18px !important;
+  line-height: 1.65 !important;
+  font-weight: 600 !important;
+  color: var(--navy-light);
+  font-family: var(--font-body) !important;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.drake-section-p.left {
+  text-align: left;
+}
+
+.drake-section-p.white {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.drake-section-p:last-child {
+  margin-bottom: 0;
+}
+
+/* ========================================
+   SECTION 1: STICKY EDITORIAL DESIGN
+   Prefix: drake- | Colors: Navy, Soft Blue, White
+   ======================================== */
+
+/* --- Container Reversion --- */
+.drake-section-inner.drake-wide {
+  max-width: 1200px;
+  /* Original Wide Width */
+  width: 100%;
+}
+
+.drake-sticky-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  /* Classic split */
+  gap: 80px;
+  align-items: start;
+}
+
+/* --- Left Column: Sticky Heading Effect --- */
+.drake-side-sticky {
+  height: 100%;
+}
+
+.drake-sticky-element {
+  position: sticky;
+  top: 140px;
+  /* Sticky Offset */
+  text-align: left;
+}
+
+.drake-section-number {
+  display: block;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #274472;
+  letter-spacing: 3px !important;
+  margin-bottom: 15px;
+  opacity: 0.5;
+}
+
+.drake-section-h2.drake-left-bar {
+  text-align: left !important;
+  color: #274472 !important;
+  font-size: 48px !important;
+  margin-bottom: 0 !important;
+}
+
+.drake-section-h2.drake-left-bar::after {
+  margin: 25px 0 0 0 !important;
+  /* Left Aligned Bar */
+  background-color: #274472 !important;
+  width: 60px !important;
+}
+
+/* --- Filling the Left Side Gap --- */
+.drake-editorial-note {
+  margin-top: 50px;
+  background-color: rgb(231, 243, 245);
+  /* Soft Blue */
+  padding: 35px;
+  border-left: 4px solid #274472;
+  /* Navy Accent */
+  border-radius: 0 4px 4px 0;
+}
+
+.drake-editorial-note p {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 18px !important;
+  line-height: 1.6 !important;
+  font-style: italic !important;
+  color: #274472;
+  font-weight: 400 !important;
+}
+
+/* --- Right Column: Content --- */
+.drake-lead-text {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 24px !important;
+  line-height: 1.5 !important;
+  color: #274472;
+  font-weight: 500 !important;
+  margin-bottom: 35px;
+}
+
+.drake-section-p-clean {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 18px !important;
+  line-height: 1.8 !important;
+  color: #274472;
+  font-weight: 300 !important;
+  opacity: 0.85;
+  margin-bottom: 40px;
+}
+
+/* --- Image Design --- */
+.drake-figure-box {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.drake-img-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.drake-img-main {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+.drake-img-caption {
+  margin-top: 20px;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px !important;
+  color: #274472;
+  opacity: 0.7;
+  line-height: 1.5 !important;
+}
+
+/* ========================================
+   FLIPPED LAYOUT - Content Left, Heading Right
+   For Sections 02, 04, 06, 08, 10
+   ======================================== */
+
+.drake-sticky-wrapper.flipped {
+  direction: rtl;
+  /* Flip the entire grid */
+}
+
+.drake-sticky-wrapper.flipped .drake-side-sticky {
+  direction: ltr;
+  /* Restore normal text direction */
+}
+
+.drake-sticky-wrapper.flipped .drake-content-column {
+  direction: ltr;
+  /* Restore normal text direction */
+}
+
+/* Adjust sticky positioning for flipped layout */
+.drake-sticky-wrapper.flipped .drake-sticky-element {
+  text-align: right;
+}
+
+.drake-sticky-wrapper.flipped .drake-section-h2.drake-left-bar {
+  text-align: right !important;
+}
+
+.drake-sticky-wrapper.flipped .drake-section-h2.drake-left-bar::after {
+  margin: 25px 0 0 auto !important;
+  /* Right aligned bar */
+}
+
+/* Flip editorial note alignment */
+.drake-sticky-wrapper.flipped .drake-editorial-note {
+  border-left: none;
+  border-right: 4px solid #274472;
+  border-radius: 4px 0 0 4px;
+}
+
+/* Adjust gap for flipped layout */
+@media (min-width: 769px) {
+  .drake-sticky-wrapper.flipped {
+    gap: 80px;
+  }
+}
+
+/* Mobile Responsive for Flipped Layouts - Center Alignment */
+@media (max-width: 1024px) {
+  .drake-sticky-wrapper.flipped .drake-sticky-element {
+    text-align: center !important;
+  }
+
+  .drake-sticky-wrapper.flipped .drake-section-h2.drake-left-bar {
+    text-align: center !important;
+  }
+
+  .drake-sticky-wrapper.flipped .drake-section-h2.drake-left-bar::after {
+    margin: 20px auto 0 !important;
+    /* Center bar on mobile */
+  }
+
+  .drake-sticky-wrapper.flipped .drake-editorial-note {
+    margin: 30px auto;
+    max-width: 600px;
+    text-align: center;
+    border-left: none;
+    border-right: none;
+    border-top: 4px solid #274472;
+  }
+}
+
+/* ========================================
+   PROPER RESPONSIVE LOGIC
+   ======================================== */
+
+@media (max-width: 1200px) {
+  .drake-sticky-wrapper {
+    gap: 60px;
+  }
+
+  .drake-section-inner.drake-wide {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+@media (max-width: 1100px) {
+  .drake-sticky-wrapper {
+    gap: 50px;
+  }
+
+  .drake-section-h2.drake-left-bar {
+    font-size: 38px !important;
+  }
+
+  .drake-side-sticky {
+    position: static;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .drake-sticky-element {
+    position: static !important;
+    text-align: center !important;
+  }
+
+  .drake-section-h2.drake-left-bar {
+    text-align: center !important;
+  }
+
+  .drake-section-h2.drake-left-bar::after {
+    margin: 20px auto 0 !important;
+  }
+
+  .drake-editorial-note {
+    margin: 30px auto;
+    max-width: 600px;
+    text-align: center;
+    border-left: none;
+    border-top: 4px solid #274472;
+  }
+}
+
+@media (max-width: 1024px) {
+  .drake-sticky-wrapper {
+    grid-template-columns: 1fr;
+    /* Stack layout */
+    gap: 50px;
+  }
+
+  .drake-sticky-element {
+    position: static !important;
+    text-align: center !important;
+  }
+
+  .drake-section-h2.drake-left-bar {
+    text-align: center !important;
+  }
+
+  .drake-section-h2.drake-left-bar::after {
+    margin: 20px auto 0 !important;
+    /* Center bar on mobile */
+  }
+
+  .drake-editorial-note {
+    margin: 30px auto;
+    max-width: 600px;
+    text-align: center;
+    border-left: none;
+    border-top: 4px solid #274472;
+  }
+
+  /* Flip layout fixes */
+  .drake-sticky-wrapper.flipped {
+    direction: ltr;
+  }
+
+  .drake-sticky-wrapper.flipped .drake-side-sticky,
+  .drake-sticky-wrapper.flipped .drake-content-column {
+    direction: ltr;
+  }
+
+  .drake-lead-text,
+  .drake-section-p-clean,
+  .drake-img-caption {
+    text-align: center;
+  }
+
+  .drake-hero-figure {
+    margin: 0 auto 40px;
+    max-width: 100%;
+  }
+
+  .drake-figure-inner {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .drake-section {
+    padding: 70px 30px;
+  }
+
+  .drake-expert-redesign {
+    padding: 80px 30px;
+  }
+
+  .drake-final-cta-section {
+    padding: 80px 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .drake-section {
+    padding: 60px 25px;
+  }
+
+  .drake-section-inner {
+    width: 100%;
+  }
+
+  .drake-section-h2.drake-left-bar {
+    font-size: 28px !important;
+  }
+
+  .drake-h1 {
+    font-size: 32px !important;
+  }
+
+  .drake-section-h2 {
+    font-size: 28px !important;
+  }
+
+  .drake-section-p,
+  h3 {
+    font-size: 17px !important;
+  }
+
+  .drake-lead-text {
+    font-size: 21px !important;
+  }
+
+  .drake-sticky-lead-text {
+    font-size: 18px !important;
+  }
+
+  .drake-img-main,
+  .drake-img-fluid {
+    height: auto;
+    min-height: 280px;
+    width: 100%;
+  }
+
+  .drake-figure-inner img {
+    width: 100%;
+    height: auto;
+    min-height: 280px;
+    object-fit: cover;
+  }
+
+  .drake-editorial-note {
+    padding: 25px 20px;
+  }
+
+  .drake-editorial-note p {
+    font-size: 16px !important;
+  }
+
+  .drake-choice-grid,
+  .drake-audience-grid-side,
+  .drake-prepare-grid-redesign,
+  .drake-ship-feature-grid-redesign,
+  .drake-lake-shake-cards,
+  .drake-why-benefits-grid-navy {
+    grid-template-columns: 1fr !important;
+  }
+
+  .drake-expert-flex {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .drake-expert-image-wrap {
+    position: static;
+    max-width: 100%;
+  }
+
+  .drake-expert-photo-container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .drake-faq-q {
+    padding: 20px 25px;
+  }
+
+  .drake-faq-a-inner {
+    padding: 0 25px 25px 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .drake-section {
+    padding: 50px 20px;
+  }
+
+  .drake-hero {
+    padding: 100px 25px 70px;
+  }
+
+  .drake-section-h2 {
+    font-size: 26px !important;
+  }
+
+  .drake-section-h2.drake-left-bar {
+    font-size: 26px !important;
+  }
+
+  .drake-sticky-lead-text,
+  .drake-lead-text {
+    font-size: 17px !important;
+  }
+
+  .drake-img-fluid,
+  .drake-img-main {
+    min-height: 250px;
+  }
+
+  .drake-editorial-note,
+  .drake-editorial-note-white,
+  .drake-editorial-note-blue,
+  .drake-editorial-note-centered {
+    padding: 20px;
+  }
+
+  .drake-danger-box {
+    padding: 40px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .drake-section {
+    padding: 45px 18px;
+  }
+
+  .drake-hero {
+    padding: 90px 18px 60px;
+  }
+
+  .drake-img-main {
+    min-height: 220px;
+  }
+
+  .drake-figure-inner img {
+    min-height: 220px;
+  }
+
+  .drake-section-h2.drake-left-bar {
+    font-size: 24px !important;
+  }
+
+  .drake-section-p,
+  h3 {
+    font-size: 16px !important;
+  }
+
+  .drake-h1 {
+    font-size: 26px !important;
+  }
+
+  .drake-h2 {
+    font-size: 24px !important;
+  }
+
+  .drake-editorial-note p {
+    font-size: 16px !important;
+  }
+
+  .drake-lead-text {
+    font-size: 16px !important;
+  }
+
+  .drake-section-p-clean {
+    font-size: 16px !important;
+  }
+
+  .drake-sticky-lead-text {
+    font-size: 16px !important;
+  }
+
+  .drake-expert-redesign {
+    padding: 60px 18px;
+  }
+
+  .drake-expert-img {
+    height: 350px;
+  }
+
+  .drake-expert-paragraph.drake-highlight {
+    font-size: 18px !important;
+  }
+
+  .drake-faq-header-centered .drake-section-h2 {
+    font-size: 24px !important;
+  }
+
+  .drake-faq-intro-text {
+    font-size: 16px !important;
+  }
+
+  .drake-faq-q {
+    padding: 18px 20px;
+  }
+
+  .drake-faq-q span {
+    font-size: 15px !important;
+  }
+
+  .drake-faq-a-inner {
+    padding: 0 20px 20px 20px;
+    font-size: 15px !important;
+  }
+
+  .drake-final-cta-section {
+    padding: 60px 18px;
+  }
+
+  .drake-text-white {
+    font-size: 26px !important;
+  }
+
+  .drake-cta-btn-white {
+    width: 100%;
+    padding: 16px 25px;
+  }
+
+  .drake-hero-btns {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .drake-btn-primary,
+  .drake-btn-secondary {
+    width: 100%;
+    padding: 15px 25px;
+    font-size: 11px !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .drake-section {
+    padding: 40px 15px;
+  }
+
+  .drake-hero {
+    padding: 80px 15px 50px;
+  }
+
+  .drake-section-h2 {
+    font-size: 22px !important;
+  }
+
+  .drake-section-h2.drake-left-bar {
+    font-size: 22px !important;
+  }
+
+  .drake-h1 {
+    font-size: 24px !important;
+  }
+
+  .drake-section-p,
+  h3,
+  .drake-lead-text,
+  .drake-sticky-lead-text {
+    font-size: 15px !important;
+  }
+
+  .drake-img-fluid,
+  .drake-img-main {
+    min-height: 200px;
+  }
+
+  .drake-editorial-note,
+  .drake-editorial-note-white,
+  .drake-editorial-note-blue {
+    padding: 18px;
+  }
+
+  .drake-expert-img {
+    height: 300px;
+  }
+
+  .drake-danger-box {
+    padding: 30px 20px;
+  }
+}
+
+/* ========================================
+   SECTION 2: CONSISTENT EDITORIAL DESIGN
+   Matches Figure, Caption, and Sticky styles of Section 1
+   ======================================== */
+
+.drake-bg-soft {
+  background-color: rgb(231, 243, 245);
+}
+
+.drake-sticky-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* --- Consistent Sticky Side --- */
+.drake-side-sticky {
+  height: 100%;
+}
+
+.drake-sticky-element {
+  position: sticky;
+  top: 140px;
+  text-align: left;
+}
+
+.drake-sticky-lead-text {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 20px !important;
+  line-height: 1.6 !important;
+  color: #274472;
+  margin-top: 25px;
+  font-weight: 500 !important;
+}
+
+.drake-roughness-term-intro {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  color: #274472;
+  font-weight: 700 !important;
+  opacity: 0.6;
+  margin-top: 30px;
+}
+
+/* --- CONSISTENT FIGURE DESIGN (Same as Section 1) --- */
+.drake-hero-figure {
+  margin: 0 0 50px 0;
+}
+
+.drake-figure-inner {
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(39, 68, 114, 0.1);
+  border: 1px solid rgba(39, 68, 114, 0.05);
+}
+
+.drake-img-fluid {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+.drake-hero-caption {
+  margin-top: 25px;
+  padding-left: 20px;
+  border-left: 1px solid rgba(39, 68, 114, 0.2);
+  /* Sidebar caption style */
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px !important;
+  color: #274472;
+  text-align: left;
+}
+
+.drake-caption-tag {
+  display: block;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  margin-bottom: 4px;
+  opacity: 0.5;
+}
+
+/* --- Cards Grid --- */
+.drake-lake-shake-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-bottom: 50px;
+}
+
+.drake-term-card {
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(39, 68, 114, 0.08);
+}
+
+.drake-term-card.drake-lake {
+  background: #ffffff;
+}
+
+.drake-term-card.drake-shake {
+  background: #274472;
+  color: #ffffff;
+}
+
+.drake-term-card h3 {
+  font-family: 'Playfair Display', serif !important;
+  margin-bottom: 10px;
+  font-weight: 600 !important;
+}
+
+/* Drake Lake Card - Better Text Visibility */
+.drake-term-card.drake-lake h3 {
+  color: #274472 !important;
+}
+
+.drake-term-card.drake-lake p {
+  color: #274472 !important;
+  opacity: 1 !important;
+}
+
+/* Drake Shake Card - Better Text Visibility */
+.drake-term-card.drake-shake h3 {
+  color: #ffffff !important;
+}
+
+.drake-term-card.drake-shake p {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+/* --- Consistent Editorial Note --- */
+.drake-editorial-note-white {
+  background-color: #ffffff;
+  padding: 35px;
+  border-left: 4px solid #274472;
+  border-radius: 0 4px 4px 0;
+  margin-top: 30px;
+}
+
+.drake-editorial-note-white p {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 18px !important;
+  font-style: italic !important;
+  color: #274472;
+}
+
+/* ========================================
+   RESPONSIVE (MATCHES SECTION 1)
+   ======================================== */
+@media (max-width: 1200px) {
+  .drake-sticky-wrapper {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .drake-sticky-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .drake-sticky-element {
+    position: static !important;
+    text-align: center !important;
+  }
+
+  .drake-section-h2.drake-left-bar::after {
+    margin: 20px auto 0 !important;
+  }
+
+  .drake-hero-caption {
+    border-left: none;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .drake-editorial-note-white {
+    margin: 30px auto;
+    max-width: 600px;
+    text-align: center;
+    border-left: none;
+    border-top: 4px solid #274472;
+  }
+
+  .drake-lake-shake-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .drake-img-fluid {
+    height: auto;
+    min-height: 280px;
+    width: 100%;
+  }
+
+  .drake-h1 {
+    font-size: 32px !important;
+  }
+
+  .drake-section-h2 {
+    font-size: 28px !important;
+  }
+
+  .drake-section-p,
+  h3 {
+    font-size: 17px !important;
+  }
+
+  .drake-lake-shake-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .drake-term-card {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .drake-h1 {
+    font-size: 26px !important;
+  }
+
+  .drake-h2 {
+    font-size: 24px !important;
+  }
+
+  .drake-section-p,
+  h3 {
+    font-size: 16px !important;
+  }
+
+  .drake-editorial-note-white p {
+    font-size: 16px !important;
+  }
+
+  .drake-sticky-lead-text {
+    font-size: 16px !important;
+  }
+
+  .drake-img-fluid {
+    min-height: 220px;
+  }
+}
+
+/* ========================================
+   SECTION 3: SHIP MANAGEMENT DESIGN
+   Prefix: drake- | Colors: Navy & Soft Blue
+   ======================================== */
+
+/* --- Layout & Sticky (Re-using consistent logic) --- */
+.drake-sticky-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.drake-side-sticky {
+  height: 100%;
+}
+
+.drake-sticky-element {
+  position: sticky;
+  top: 140px;
+  text-align: left;
+}
+
+.drake-sticky-lead-text {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 20px !important;
+  line-height: 1.6 !important;
+  color: #274472;
+  margin-top: 25px;
+  font-weight: 500 !important;
+}
+
+/* --- Feature Pills Grid --- */
+.drake-ship-feature-grid-redesign {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.drake-feature-pill-card {
+  background-color: rgb(231, 243, 245);
+  /* Soft Blue background */
+  padding: 30px 25px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-bottom: 3px solid #274472;
+  /* Navy accent instead of gold */
+  transition: transform 0.3s ease;
+}
+
+.drake-feature-pill-card:hover {
+  transform: translateY(-5px);
+}
+
+.drake-pill-icon-navy {
+  font-size: 28px !important;
+  margin-bottom: 15px;
+}
+
+.drake-feature-pill-card h3 {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  color: #274472;
+  line-height: 1.4 !important;
+}
+
+.drake-full-width-pill {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+/* --- Consistent Figure Design (Shared with Section 1 & 2) --- */
+.drake-hero-figure {
+  margin: 0 0 50px 0;
+}
+
+.drake-figure-inner {
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(39, 68, 114, 0.1);
+  border: 1px solid rgba(39, 68, 114, 0.05);
+}
+
+.drake-img-fluid {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+.drake-hero-caption {
+  margin-top: 25px;
+  padding-left: 20px;
+  border-left: 1px solid rgba(39, 68, 114, 0.2);
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px !important;
+  color: #274472;
+  text-align: left;
+}
+
+.drake-caption-tag {
+  display: block;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  margin-bottom: 4px;
+  opacity: 0.5;
+}
+
+/* --- Consistent Editorial Note --- */
+.drake-editorial-note-white {
+  background-color: rgb(231, 243, 245);
+  /* Section uses Blue Box for footer */
+  padding: 35px;
+  border-left: 4px solid #274472;
+  border-radius: 0 4px 4px 0;
+}
+
+.drake-editorial-note-white p {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 18px !important;
+  font-style: italic !important;
+  color: #274472;
+  margin: 0;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1200px) {
+  .drake-sticky-wrapper {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .drake-sticky-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .drake-sticky-element {
+    position: static !important;
+    text-align: center !important;
+  }
+
+  .drake-section-h2.drake-left-bar::after {
+    margin: 20px auto 0 !important;
+  }
+
+  .drake-hero-caption {
+    border-left: none;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .drake-ship-feature-grid-redesign {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .drake-img-fluid {
+    height: auto;
+    min-height: 280px;
+    width: 100%;
+  }
+
+  .drake-h1 {
+    font-size: 32px !important;
+  }
+
+  .drake-section-h2 {
+    font-size: 28px !important;
+  }
+
+  .drake-section-p {
+    font-size: 17px !important;
+  }
+
+  .drake-ship-feature-grid-redesign {
+    grid-template-columns: 1fr;
+  }
+
+  .drake-feature-pill-card {
+    padding: 25px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .drake-sticky-lead-text {
+    font-size: 16px !important;
+  }
+
+  .drake-editorial-note-white p {
+    font-size: 16px !important;
+  }
+
+  .drake-h1 {
+    font-size: 26px !important;
+  }
+
+  .drake-h2 {
+    font-size: 24px !important;
+  }
+
+  .drake-section-p {
+    font-size: 16px !important;
+  }
+
+  .drake-img-fluid {
+    min-height: 220px;
+  }
+}
+
+/* ========================================
+   SECTION 4: SAFETY DESIGN (STICKY)
+   Prefix: drake- | Colors: Navy & Soft Blue
+   ======================================== */
+
+.drake-bg-soft {
+  background-color: rgb(231, 243, 245);
+}
+
+/* --- Sticky Side (Matches Sections 1-3) --- */
+.drake-side-sticky {
+  height: 100%;
+}
+
+.drake-sticky-element {
+  position: sticky;
+  top: 140px;
+  text-align: left;
+}
+
+.drake-sticky-lead-text {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 19px !important;
+  line-height: 1.6 !important;
+  color: #274472;
+  margin-top: 25px;
+  font-weight: 500 !important;
+}
+
+/* --- Danger Box: High Contrast Navy --- */
+.drake-danger-box {
+  background-color: #274472;
+  /* Solid Navy */
+  border-radius: 12px;
+  padding: 80px 60px;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(15, 28, 46, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Safety Badge (Navy/White) */
+.drake-safe-badge-navy {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 24px;
+  border-radius: 40px;
+  margin-bottom: 40px;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #ffffff;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px !important;
+}
+
+.drake-danger-lead {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 22px !important;
+  line-height: 1.5 !important;
+  margin-bottom: 30px !important;
+  font-weight: 500 !important;
+}
+
+.drake-section-p-white {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.8 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 300 !important;
+  margin-bottom: 25px;
+}
+
+.drake-danger-conclusion-line {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.drake-danger-conclusion-line p {
+  font-style: italic !important;
+  margin-bottom: 0;
+}
+
+/* ========================================
+   RESPONSIVE (MATCHES SECTION 1-3)
+   ======================================== */
+@media (max-width: 1200px) {
+  .drake-sticky-wrapper {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .drake-sticky-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .drake-sticky-element {
+    position: static !important;
+    text-align: center !important;
+  }
+
+  .drake-section-h2.drake-left-bar::after {
+    margin: 20px auto 0 !important;
+  }
+
+  .drake-danger-box {
+    padding: 60px 40px;
+    border-radius: 0;
+    /* Full width on mobile looks more professional */
+  }
+}
+
+@media (max-width: 768px) {
+  .drake-danger-lead {
+    font-size: 20px !important;
+  }
+
+  .drake-h1 {
+    font-size: 32px !important;
+  }
+
+  .drake-section-h2 {
+    font-size: 28px !important;
+  }
+
+  .drake-section-p-white,
+  h3 {
+    font-size: 17px !important;
+  }
+
+  .drake-danger-box {
+    padding: 50px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .drake-h1 {
+    font-size: 26px !important;
+  }
+
+  .drake-h2 {
+    font-size: 24px !important;
+  }
+
+  .drake-section-p-white,
+  h3 {
+    font-size: 16px !important;
+  }
+
+  .drake-sticky-lead-text {
+    font-size: 16px !important;
+  }
+
+  .drake-danger-box {
+    padding: 40px 25px;
+  }
+
+  .drake-danger-lead {
+    font-size: 19px !important;
+  }
+}
+
+/* ========================================
+   SECTION 5: FEELS LIKE DESIGN (STICKY)
+   Prefix: drake- | Colors: Navy & Soft Blue
+   ======================================== */
+
+/* --- Layout Grid (Matches Sections 1-4) --- */
+.drake-sticky-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.drake-side-sticky {
+  height: 100%;
+}
+
+.drake-sticky-element {
+  position: sticky;
+  top: 140px;
+  text-align: left;
+}
+
+.drake-sticky-lead-text {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 20px !important;
+  line-height: 1.6 !important;
+  color: #274472;
+  margin-top: 25px;
+  font-weight: 500 !important;
+}
+
+/* --- Content Boxes --- */
+.drake-feels-accent-box {
+  background-color: rgb(231, 243, 245);
+  /* Soft Blue Background */
+  padding: 40px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  border-left: 1px solid rgba(39, 68, 114, 0.1);
+}
+
+.drake-feels-accent-box .drake-section-p-clean {
+  margin-bottom: 0;
+  font-style: italic !important;
+  color: #274472;
+}
+
+.drake-narrative-block {
+  margin-bottom: 50px;
+}
+
+/* --- CONSISTENT FIGURE DESIGN (Same as Sections 1-3) --- */
+.drake-hero-figure {
+  margin: 0 0 50px 0;
+}
+
+.drake-figure-inner {
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(39, 68, 114, 0.1);
+  border: 1px solid rgba(39, 68, 114, 0.05);
+}
+
+.drake-img-fluid {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+.drake-hero-caption {
+  margin-top: 25px;
+  padding-left: 20px;
+  border-left: 1px solid rgba(39, 68, 114, 0.2);
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px !important;
+  color: #274472;
+  text-align: left;
+}
+
+.drake-caption-tag {
+  display: block;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  margin-bottom: 4px;
+  opacity: 0.5;
+}
+
+/* --- Consistent Editorial Note --- */
+.drake-editorial-note-white {
+  background-color: rgb(231, 243, 245);
+  padding: 35px;
+  border-left: 4px solid #274472;
+  border-radius: 0 4px 4px 0;
+}
+
+.drake-editorial-note-white p {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 19px !important;
+  font-style: italic !important;
+  color: #274472;
+  margin: 0;
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 1200px) {
+  .drake-sticky-wrapper {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .drake-sticky-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .drake-sticky-element {
+    position: static !important;
+    text-align: center !important;
+  }
+
+  .drake-section-h2.drake-left-bar::after {
+    margin: 20px auto 0 !important;
+  }
+
+  .drake-hero-caption {
+    border-left: none;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .drake-editorial-note-white {
+    margin: 30px auto;
+    max-width: 600px;
+    text-align: center;
+    border-left: none;
+    border-top: 4px solid #274472;
+  }
+}
+
+@media (max-width: 768px) {
+  .drake-img-fluid {
+    height: auto;
+    min-height: 280px;
+    width: 100%;
+  }
+
+  .drake-h1 {
+    font-size: 32px !important;
+  }
+
+  .drake-section-h2 {
+    font-size: 28px !important;
+  }
+
+  .drake-section-p,
+  h3 {
+    font-size: 17px !important;
+  }
+
+  .drake-feels-accent-box {
+    padding: 30px 20px;
+  }
+
+  .drake-narrative-block {
+    margin-bottom: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .drake-h1 {
+    font-size: 26px !important;
+  }
+
+  .drake-h2 {
+    font-size: 24px !important;
+  }
+
+  .drake-section-p,
+  h3 {
+    font-size: 16px !important;
+  }
+
+  .drake-sticky-lead-text {
+    font-size: 16px !important;
+  }
+
+  .drake-editorial-note-white p {
+    font-size: 16px !important;
+  }
+
+  .drake-img-fluid {
+    min-height: 220px;
+  }
+
+  .drake-feels-accent-box {
+    padding: 25px 18px;
+  }
+}
+
+/* ========================================
+   SECTION 6: CHOICE DESIGN (STICKY)
+   Prefix: drake- | Colors: Navy & Soft Blue
+   ======================================== */
+
+.drake-choice-section {
+  padding-top: 50px;
+}
+
+/* --- Layout Grid (Matches Sections 1-5) --- */
+.drake-sticky-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.drake-side-sticky {
+  height: 100%;
+}
+
+.drake-sticky-element {
+  position: sticky;
+  top: 140px;
+  text-align: left;
+}
+
+.drake-sticky-lead-text {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 20px !important;
+  line-height: 1.6 !important;
+  color: #274472;
+  margin-top: 25px;
+  font-weight: 500 !important;
+}
+
+/* --- Comparison Cards --- */
+.drake-choice-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.drake-choice-card-redesign {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(39, 68, 114, 0.05);
+  border: 1px solid rgba(39, 68, 114, 0.1);
+}
+
+.drake-choice-badge-navy {
+  display: inline-block;
+  font-size: 10px !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  background-color: rgb(231, 243, 245);
+  color: #274472;
+  padding: 6px 14px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.drake-choice-card-redesign h3 {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 28px !important;
+  color: #274472;
+  margin-bottom: 25px;
+  font-weight: 500 !important;
+}
+
+.drake-choice-list-navy {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.drake-choice-list-navy li {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  color: #274472;
+  font-weight: 300 !important;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(39, 68, 114, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.drake-choice-list-navy li::before {
+  content: "—";
+  color: #274472;
+  font-weight: bold !important;
+}
+
+.drake-choice-list-navy li:last-child {
+  border-bottom: none;
+}
+
+/* --- CONSISTENT FIGURE DESIGN (Shared with Section 1-5) --- */
+.drake-hero-figure {
+  margin: 0 0 40px 0;
+}
+
+.drake-figure-inner {
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(39, 68, 114, 0.1);
+}
+
+.drake-img-fluid {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  display: block;
+}
+
+.drake-hero-caption {
+  margin-top: 20px;
+  padding-left: 15px;
+  border-left: 1px solid rgba(39, 68, 114, 0.2);
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px !important;
+  color: #274472;
+}
+
+/* --- Consistent Editorial Note (White box on Blue section) --- */
+.drake-editorial-note-white {
+  background-color: #ffffff;
+  padding: 35px;
+  border-left: 4px solid #274472;
+  border-radius: 0 4px 4px 0;
+  margin-top: 30px;
+}
+
+.drake-editorial-note-white p {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 18px !important;
+  font-style: italic !important;
+  color: #274472;
+}
+
+.drake-choice-verdict .drake-section-p-clean {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 22px !important;
+  color: #274472;
+  font-weight: 500 !important;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1200px) {
+  .drake-sticky-wrapper {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .drake-sticky-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .drake-sticky-element {
+    position: static !important;
+    text-align: center !important;
+  }
+
+  .drake-section-h2.drake-left-bar::after {
+    margin: 20px auto 0 !important;
+  }
+
+  .drake-hero-caption {
+    border-left: none;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .drake-choice-card-redesign {
+    padding: 30px 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .drake-img-fluid {
+    height: auto;
+    min-height: 280px;
+    width: 100%;
+  }
+
+  .drake-h1 {
+    font-size: 32px !important;
+  }
+
+  .drake-section-h2 {
+    font-size: 28px !important;
+  }
+
+  .drake-section-p,
+  h3 {
+    font-size: 17px !important;
+  }
+
+  .drake-choice-card-redesign {
+    padding: 25px 20px;
+  }
+
+  .drake-choice-card-redesign h3 {
+    font-size: 24px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .drake-h1 {
+    font-size: 26px !important;
+  }
+
+  .drake-h2 {
+    font-size: 24px !important;
+  }
+
+  .drake-section-p,
+  h3 {
+    font-size: 16px !important;
+  }
+
+  .drake-sticky-lead-text {
+    font-size: 16px !important;
+  }
+
+  .drake-editorial-note-white p {
+    font-size: 16px !important;
+  }
+
+  .drake-img-fluid {
+    min-height: 220px;
+  }
+
+  .drake-choice-badge-navy {
+    font-size: 9px !important;
+    padding: 5px 12px;
+  }
+
+  .drake-choice-card-redesign h3 {
+    font-size: 22px !important;
+  }
+}
+
+/* ========================================
+   SECTION 7: AUDIENCE DESIGN (SIDE-BY-SIDE)
+   Prefix: drake- | Colors: Navy & Soft Blue
+   ======================================== */
+
+.drake-audience-redesign {
+  padding: 100px 0;
+}
+
+/* --- Centered Header --- */
+.drake-audience-header-center {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.drake-audience-header-center .drake-section-h2 {
+  color: #274472 !important;
+  margin-bottom: 0;
+}
+
+/* Removing auto-bar to use custom Navy center divider */
+.drake-audience-header-center .drake-section-h2::after {
+  display: none !important;
+}
+
+.drake-navy-divider-center {
+  width: 60px;
+  height: 3px;
+  background-color: #274472;
+  margin: 30px auto;
+  border-radius: 2px;
+}
+
+/* --- Side-by-Side Grid --- */
+.drake-audience-grid-side {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* Side-by-Side */
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto 50px;
+}
+
+.drake-audience-card-clean {
+  padding: 50px 40px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.drake-audience-card-clean:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(39, 68, 114, 0.08);
+}
+
+/* Variant 1: Soft Blue */
+.drake-bg-soft-blue {
+  background-color: rgb(231, 243, 245);
+}
+
+/* Variant 2: Outline */
+.drake-card-outline {
+  background-color: #ffffff;
+  border: 1px solid rgba(39, 68, 114, 0.15);
+}
+
+.drake-card-icon-circle {
+  width: 50px;
+  height: 50px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #274472;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 15px rgba(39, 68, 114, 0.05);
+}
+
+/* Ensure Lucide icons inside circles are centered */
+.drake-card-icon-circle .drake-icon-check,
+.drake-card-icon-circle .drake-icon-alert {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.drake-card-outline .drake-card-icon-circle {
+  background-color: rgb(231, 243, 245);
+}
+
+.drake-audience-card-clean h3 {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 22px !important;
+  color: #274472;
+  margin-bottom: 25px;
+  font-weight: 500 !important;
+  line-height: 1.3 !important;
+}
+
+.drake-audience-list-navy {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.drake-audience-list-navy li {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  color: #274472;
+  font-weight: 400 !important;
+  margin-bottom: 15px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.drake-audience-list-navy li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: #274472;
+  opacity: 0.5;
+}
+
+.drake-audience-list-navy li:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Centered Footer --- */
+.drake-audience-footer-center {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.drake-editorial-note-centered {
+  padding: 35px;
+  border-top: 1px solid rgba(39, 68, 114, 0.15);
+}
+
+.drake-editorial-note-centered p {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 18px !important;
+  font-style: italic !important;
+  color: #274472;
+  margin: 0;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .drake-audience-grid-side {
+    padding: 0 20px;
+    gap: 20px;
+  }
+
+  .drake-audience-card-clean {
+    padding: 40px 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .drake-audience-grid-side {
+    grid-template-columns: 1fr;
+    /* Stack on mobile */
+  }
+
+  .drake-h1 {
+    font-size: 32px !important;
+  }
+
+  .drake-section-h2 {
+    font-size: 28px !important;
+  }
+
+  .drake-section-p,
+  h3 {
+    font-size: 17px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .drake-audience-header-center .drake-section-h2 {
+    font-size: 24px !important;
+  }
+
+  .drake-h1 {
+    font-size: 26px !important;
+  }
+
+  .drake-h2 {
+    font-size: 24px !important;
+  }
+
+  .drake-section-p,
+  h3 {
+    font-size: 16px !important;
+  }
+}
+
+/* ========================================
+   SECTION 8: PREPARE DESIGN (STICKY)
+   Prefix: drake- | Colors: Navy & Soft Blue
+   ======================================== */
+
+.drake-prepare-section {
+  padding-top: 50px;
+}
+
+/* --- Layout Grid (Consistent with sections 1-7) --- */
+.drake-sticky-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.drake-side-sticky {
+  height: 100%;
+}
+
+.drake-sticky-element {
+  position: sticky;
+  top: 140px;
+  text-align: left;
+}
+
+.drake-sticky-lead-text {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 20px !important;
+  line-height: 1.6 !important;
+  color: #274472;
+  margin-top: 25px;
+  font-weight: 500 !important;
+}
+
+/* --- Preparation Cards --- */
+.drake-prepare-grid-redesign {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* 2x2 grid in the scrolling column */
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.drake-prepare-step-card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(39, 68, 114, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.drake-prepare-step-card:hover {
+  transform: translateY(-5px);
+}
+
+.drake-prepare-badge {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  color: #ffffff;
+  background-color: #274472;
+  padding: 6px 12px;
+  border-radius: 4px;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+.drake-prepare-text-navy {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 15px !important;
+  line-height: 1.5 !important;
+  color: #274472;
+  font-weight: 500 !important;
+  margin: 0;
+}
+
+/* --- CONSISTENT FIGURE DESIGN (Same as Sections 1-7) --- */
+.drake-hero-figure {
+  margin: 0 0 20px 0;
+}
+
+.drake-figure-inner {
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(39, 68, 114, 0.1);
+  border: 1px solid rgba(39, 68, 114, 0.05);
+}
+
+.drake-img-fluid {
+  width: 100%;
+  height: 220px;
+  /* Card image height */
+  object-fit: cover;
+  display: block;
+}
+
+/* --- Consistent White Editorial Box (Used in Footer) --- */
+.drake-editorial-note-white {
+  background-color: #ffffff;
+  padding: 35px;
+  border-left: 4px solid #274472;
+  border-radius: 0 4px 4px 0;
+  margin-top: 30px;
+}
+
+.drake-editorial-note-white p {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 18px !important;
+  font-style: italic !important;
+  color: #274472;
+  margin: 0;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1200px) {
+  .drake-sticky-wrapper {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .drake-sticky-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .drake-sticky-element {
+    position: static !important;
+    text-align: center !important;
+  }
+
+  .drake-section-h2.drake-left-bar::after {
+    margin: 20px auto 0 !important;
+  }
+
+  .drake-editorial-note-white {
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: center;
+    border-left: none;
+    border-top: 4px solid #274472;
+  }
+
+  .drake-prepare-grid-redesign {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .drake-prepare-grid-redesign {
+    grid-template-columns: 1fr;
+  }
+
+  .drake-img-fluid {
+    height: auto;
+    min-height: 280px;
+    width: 100%;
+  }
+
+  .drake-h1 {
+    font-size: 32px !important;
+  }
+
+  .drake-section-h2 {
+    font-size: 28px !important;
+  }
+
+  .drake-section-p,
+  h3 {
+    font-size: 17px !important;
+  }
+
+  .drake-prepare-step-card {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .drake-h1 {
+    font-size: 26px !important;
+  }
+
+  .drake-h2 {
+    font-size: 24px !important;
+  }
+
+  .drake-section-p,
+  h3 {
+    font-size: 16px !important;
+  }
+
+  .drake-sticky-lead-text {
+    font-size: 16px !important;
+  }
+
+  .drake-editorial-note-white p {
+    font-size: 16px !important;
+  }
+
+  .drake-prepare-text-navy {
+    font-size: 16px !important;
+  }
+
+  .drake-img-fluid {
+    min-height: 220px;
+  }
+
+  .drake-prepare-step-card {
+    padding: 20px;
+  }
+
+  .drake-prepare-badge {
+    font-size: 9px !important;
+    padding: 5px 10px;
+  }
+}
+
+/* ========================================
+   SECTION 9: EXPERT INSIGHT - REDESIGN
+   Side-by-side layout with Photo, Navy, and Soft Blue schema
+   ======================================== */
+
+.drake-expert-redesign {
+  padding: 120px 40px;
+}
+
+.drake-expert-flex {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* --- Right Column: Photo Styling - Sticky --- */
+.drake-expert-image-wrap {
+  position: relative;
+  position: sticky;
+  top: 120px;
+  height: fit-content;
+}
+
+.drake-expert-photo-container {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(39, 68, 114, 0.15);
+}
+
+.drake-expert-img {
+  width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Replaced Gold accent with Navy */
+.drake-expert-photo-accent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+}
+
+/* --- Right Column: Text Styling --- */
+.drake-expert-header-left {
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.drake-expert-header-left .drake-section-h2 {
+  text-align: left;
+  color: #274472 !important;
+  margin-bottom: 0;
+}
+
+/* Replaced Gold decorative bar with Navy */
+.drake-expert-header-left .drake-section-h2::after {
+  margin: 20px 0 0;
+  background: #274472;
+  width: 60px;
+}
+
+.drake-expert-quote-body {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.drake-expert-icon-navy {
+  font-family: var(--font-display) !important;
+  font-size: 80px !important;
+  color: #274472;
+  line-height: 1 !important;
+  height: 40px;
+  opacity: 0.15;
+  margin-bottom: 10px;
+}
+
+.drake-expert-paragraph {
+  font-size: 17px !important;
+  line-height: 1.7 !important;
+  color: rgba(39, 68, 114, 0.85) !important;
+  margin-bottom: 24px;
+  font-weight: 300 !important;
+  font-family: var(--font-body) !important;
+}
+
+/* First paragraph (Lead) styling */
+.drake-expert-paragraph.drake-highlight {
+  font-size: 20px !important;
+  color: #274472 !important;
+  font-weight: 500 !important;
+  font-family: var(--font-display) !important;
+  font-style: italic !important;
+}
+
+/* Final punchy insight paragraph */
+.drake-expert-paragraph.drake-final-insight {
+  font-weight: 600 !important;
+  color: #274472 !important;
+  margin-bottom: 0;
+}
+
+/* Signature Area */
+.drake-expert-author-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.drake-expert-line-navy {
+  width: 30px;
+  height: 1px;
+  background: #274472;
+  margin-bottom: 15px;
+  opacity: 0.4;
+}
+
+.drake-expert-name {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  color: #274472;
+  margin-bottom: 4px;
+}
+
+.drake-expert-title {
+  font-size: 12px !important;
+  color: rgba(39, 68, 114, 0.7);
+  font-weight: 400 !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 1200px) {
+  .drake-expert-flex {
+    gap: 60px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .drake-expert-flex {
+    gap: 50px;
+  }
+
+  .drake-expert-img {
+    height: 450px;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 900px) {
+  .drake-expert-flex {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .drake-expert-image-wrap {
+    order: 2;
+    max-width: 100%;
+    position: static;
+  }
+
+  .drake-expert-content-wrap {
+    order: 1;
+  }
+
+  .drake-expert-header-left,
+  .drake-expert-author-footer {
+    align-items: center;
+    text-align: center;
+  }
+
+  .drake-expert-header-left .drake-section-h2 {
+    text-align: center;
+  }
+
+  .drake-expert-header-left .drake-section-h2::after,
+  .drake-expert-line-navy {
+    margin: 20px auto 0;
+  }
+
+  .drake-expert-photo-container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .drake-h1 {
+    font-size: 32px !important;
+  }
+
+  .drake-section-h2 {
+    font-size: 28px !important;
+  }
+
+  .drake-expert-paragraph,
+  h3 {
+    font-size: 17px !important;
+  }
+
+  .drake-expert-img {
+    height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .drake-expert-redesign {
+    padding: 60px 20px;
+  }
+
+  .drake-expert-img {
+    height: 350px;
+  }
+
+  .drake-expert-paragraph.drake-highlight {
+    font-size: 18px !important;
+  }
+
+  .drake-h1 {
+    font-size: 26px !important;
+  }
+
+  .drake-h2 {
+    font-size: 24px !important;
+  }
+
+  .drake-expert-paragraph,
+  h3 {
+    font-size: 16px !important;
+  }
+
+  .drake-expert-quote-body {
+    margin-bottom: 30px;
+  }
+
+  .drake-expert-icon-navy {
+    font-size: 60px !important;
+  }
+}
+
+/* ========================================
+   SECTION 10: NEXT STEPS DESIGN (STICKY)
+   Prefix: drake- | Colors: Navy & Soft Blue
+   ======================================== */
+
+.drake-next-section {
+  padding-top: 50px;
+}
+
+/* --- Layout Grid (Matches Previous Sections) --- */
+.drake-sticky-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.drake-side-sticky {
+  height: 100%;
+}
+
+.drake-sticky-element {
+  position: sticky;
+  top: 140px;
+  text-align: left;
+}
+
+.drake-sticky-lead-text {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 20px !important;
+  line-height: 1.6 !important;
+  color: #274472;
+  margin-top: 25px;
+  font-weight: 500 !important;
+}
+
+/* --- Timeline / Steps Styling --- */
+.drake-next-steps-timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 50px;
+}
+
+.drake-next-step-row-new {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+}
+
+.drake-next-step-circle-navy {
+  width: 50px;
+  height: 50px;
+  background-color: #274472;
+  /* Solid Navy */
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+}
+
+.drake-next-step-card-white {
+  background-color: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(39, 68, 114, 0.05);
+  border: 1px solid rgba(39, 68, 114, 0.1);
+  flex-grow: 1;
+  transition: transform 0.3s ease;
+}
+
+.drake-next-step-card-white:hover {
+  transform: translateX(10px);
+  border-color: #274472;
+}
+
+.drake-next-step-card-white .drake-section-p-clean {
+  color: #274472;
+  margin: 0;
+  font-weight: 400 !important;
+}
+
+/* Navy Vertical Connector */
+.drake-next-connector-navy {
+  width: 2px;
+  height: 35px;
+  background-color: #274472;
+  margin-left: 24px;
+  /* Centered with the 50px circle */
+  opacity: 0.3;
+}
+
+/* --- Consistent White Editorial Box (Used in Footer) --- */
+.drake-editorial-note-white {
+  background-color: #ffffff;
+  padding: 35px;
+  border-left: 4px solid #274472;
+  border-radius: 0 4px 4px 0;
+  margin-top: 30px;
+}
+
+.drake-editorial-note-white p {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 18px !important;
+  font-style: italic !important;
+  color: #274472;
+  margin: 0;
+}
+
+/* ========================================
+   RESPONSIVE (MATCHES PREVIOUS SECTIONS)
+   ======================================== */
+@media (max-width: 1200px) {
+  .drake-sticky-wrapper {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .drake-sticky-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .drake-sticky-element {
+    position: static !important;
+    text-align: center !important;
+  }
+
+  .drake-section-h2.drake-left-bar::after {
+    margin: 20px auto 0 !important;
+  }
+
+  .drake-next-steps-timeline {
+    align-items: center;
+  }
+
+  .drake-next-step-row-new {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .drake-next-connector-navy {
+    margin-left: 0;
+    margin: 15px 0;
+  }
+
+  .drake-editorial-note-white {
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: center;
+    border-left: none;
+    border-top: 4px solid #274472;
+  }
+}
+
+@media (max-width: 768px) {
+  .drake-next-step-card-white {
+    padding: 20px;
+  }
+
+  .drake-h1 {
+    font-size: 32px !important;
+  }
+
+  .drake-section-h2 {
+    font-size: 28px !important;
+  }
+
+  .drake-section-p {
+    font-size: 17px !important;
+  }
+
+  .drake-next-step-circle-navy {
+    width: 45px;
+    height: 45px;
+    font-size: 14px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .drake-h1 {
+    font-size: 26px !important;
+  }
+
+  .drake-h2 {
+    font-size: 24px !important;
+  }
+
+  .drake-section-p {
+    font-size: 16px !important;
+  }
+
+  .drake-sticky-lead-text {
+    font-size: 16px !important;
+  }
+
+  .drake-editorial-note-white p {
+    font-size: 16px !important;
+  }
+
+  .drake-next-step-card-white .drake-section-p-clean {
+    font-size: 16px !important;
+  }
+
+  .drake-next-step-card-white {
+    padding: 18px;
+  }
+
+  .drake-next-step-circle-navy {
+    width: 40px;
+    height: 40px;
+    font-size: 13px !important;
+  }
+}
+
+/* ========================================
+   SECTION 11: WHY BOOK DESIGN (STICKY)
+   Prefix: drake- | Colors: Navy & Soft Blue
+   ======================================== */
+
+.drake-why-book-section {
+  padding-top: 50px;
+}
+
+/* --- Layout Grid (Consistent with sections 1-10) --- */
+.drake-sticky-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.drake-side-sticky {
+  height: 100%;
+}
+
+.drake-sticky-element {
+  position: sticky;
+  top: 140px;
+  text-align: left;
+}
+
+.drake-sticky-lead-text {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 19px !important;
+  line-height: 1.6 !important;
+  color: #274472;
+  margin-top: 25px;
+  font-weight: 500 !important;
+}
+
+/* --- Bio Section --- */
+.drake-why-intro-navy {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 22px !important;
+  line-height: 1.4 !important;
+  color: #274472;
+  font-weight: 500 !important;
+  margin-bottom: 20px;
+}
+
+.drake-why-bio-navy {
+  margin-bottom: 50px;
+}
+
+.drake-why-bio-navy .drake-section-p-clean {
+  color: #274472;
+  opacity: 0.85;
+}
+
+/* --- Benefit Cards Grid --- */
+.drake-why-benefit-title-navy {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 12px !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  color: #274472;
+  margin-bottom: 25px;
+  opacity: 0.6;
+}
+
+.drake-why-benefits-grid-navy {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.drake-benefit-card-navy {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 22px 25px;
+  background-color: rgb(231, 243, 245);
+  /* Soft Blue background */
+  border-radius: 8px;
+  border-left: 3px solid #274472;
+  /* Navy accent instead of gold */
+  transition: transform 0.3s ease;
+}
+
+.drake-benefit-card-navy:hover {
+  transform: translateX(8px);
+}
+
+.drake-benefit-icon-navy {
+  color: #274472;
+  font-size: 16px !important;
+}
+
+.drake-benefit-card-navy p {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #274472;
+  margin: 0;
+  line-height: 1.3 !important;
+}
+
+/* --- Consistent Editorial Note (Soft Blue box for White section) --- */
+.drake-editorial-note-blue {
+  background-color: rgb(231, 243, 245);
+  padding: 35px;
+  border-left: 4px solid #274472;
+  border-radius: 0 4px 4px 0;
+}
+
+.drake-editorial-note-blue p {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 18px !important;
+  font-style: italic !important;
+  color: #274472;
+  margin: 0;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1200px) {
+  .drake-sticky-wrapper {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .drake-sticky-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .drake-sticky-element {
+    position: static !important;
+    text-align: center !important;
+  }
+
+  .drake-section-h2.drake-left-bar::after {
+    margin: 20px auto 0 !important;
+  }
+
+  .drake-why-bio-navy,
+  .drake-why-benefit-title-navy {
+    text-align: center;
+  }
+
+  .drake-editorial-note-blue {
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: center;
+    border-left: none;
+    border-top: 4px solid #274472;
+  }
+
+  .drake-why-benefits-grid-navy {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .drake-why-benefits-grid-navy {
+    grid-template-columns: 1fr;
+  }
+
+  .drake-why-intro-navy {
+    font-size: 20px !important;
+  }
+
+  .drake-h1 {
+    font-size: 32px !important;
+  }
+
+  .drake-section-h2 {
+    font-size: 28px !important;
+  }
+
+  .drake-section-p,
+  h3 {
+    font-size: 17px !important;
+  }
+
+  .drake-benefit-card-navy {
+    padding: 18px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .drake-h1 {
+    font-size: 26px !important;
+  }
+
+  .drake-h2 {
+    font-size: 24px !important;
+  }
+
+  .drake-section-p,
+  h3 {
+    font-size: 16px !important;
+  }
+
+  .drake-sticky-lead-text {
+    font-size: 16px !important;
+  }
+
+  .drake-editorial-note-blue p {
+    font-size: 16px !important;
+  }
+
+  .drake-why-intro-navy {
+    font-size: 18px !important;
+  }
+
+  .drake-benefit-card-navy p {
+    font-size: 16px !important;
+  }
+
+  .drake-benefit-card-navy {
+    padding: 16px 18px;
+  }
+
+  .drake-benefit-icon-navy {
+    font-size: 14px !important;
+  }
+}
+
+/* ========================================
+   SECTION 12: FAQ DESIGN (FULL WIDTH)
+   Prefix: drake- | Colors: Navy & Soft Blue
+   ======================================== */
+
+.drake-faq-fullwidth {
+  padding: 100px 0;
+}
+
+/* --- Centered Header --- */
+.drake-faq-header-centered {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 0 20px;
+}
+
+.drake-faq-header-centered .drake-section-h2 {
+  color: #274472 !important;
+  margin-bottom: 0;
+}
+
+/* Removing default auto-bar to use custom Navy center divider */
+.drake-faq-header-centered .drake-section-h2::after {
+  display: none !important;
+}
+
+.drake-navy-divider-center {
+  width: 60px;
+  height: 3px;
+  background-color: #274472;
+  margin: 30px auto;
+  border-radius: 2px;
+}
+
+.drake-faq-intro-text {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 20px !important;
+  color: #274472;
+  max-width: 700px;
+  margin: 0 auto;
+  font-weight: 400 !important;
+  opacity: 0.8;
+}
+
+/* --- Full Width Accordion Container --- */
+.drake-faq-full-container {
+  max-width: 1000px;
+  /* Optimal readability width */
+  margin: 0 auto;
+  width: 100%;
+}
+
+.drake-faq-list {
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 45px rgba(39, 68, 114, 0.08);
+  border: 1px solid rgba(39, 68, 114, 0.1);
+}
+
+/* Emerald-style FAQ overrides */
+.drake-faq-list.emerald-style {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  text-align: left;
+}
+
+.drake-faq-item.emerald-faq-item {
+  border-top: 1px solid #e4e9ee;
+  padding: 20px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+.drake-faq-item.emerald-faq-item:last-child {
+  border-bottom: 1px solid #e4e9ee;
+}
+
+.drake-faq-item.emerald-faq-item:hover {
+  background-color: transparent;
+}
+
+.drake-faq-item.emerald-faq-item:hover .emerald-faq-question {
+  color: #1a3a6d;
+}
+
+.drake-faq-q.emerald-faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px !important;
+  font-weight: 500;
+  color: #2f4a6d;
+  font-family: 'Montserrat', sans-serif;
+  padding: 10px 0;
+}
+
+.drake-faq-icon.emerald-faq-icon {
+  font-size: 22px;
+  font-weight: 300;
+  color: #2f4a6d;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drake-faq-a.emerald-faq-answer {
+  margin: 0;
+  padding: 0;
+}
+
+.drake-faq-a-inner {
+  padding: 14px 0 0 0;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 18px !important;
+  line-height: 1.7 !important;
+  color: #274472cc;
+  font-weight: 300 !important;
+  opacity: 1;
+}
+
+.drake-faq-item {
+  border-bottom: 1px solid rgba(39, 68, 114, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.drake-faq-item:last-child {
+  border-bottom: none;
+}
+
+.drake-faq-item:hover {
+  background-color: rgba(231, 243, 245, 0.4);
+  /* Light Blue Hover */
+}
+
+.drake-faq-q {
+  padding: 30px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.drake-faq-q span {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 17px !important;
+  font-weight: 500 !important;
+  color: #2f4a6d;
+  line-height: 1.5 !important;
+}
+
+.drake-faq-icon {
+  color: #274472;
+  transition: transform 0.4s ease;
+  flex-shrink: 0;
+}
+
+.drake-faq-item.drake-open .drake-faq-icon {
+  transform: rotate(180deg);
+}
+
+.drake-faq-item.drake-open .drake-faq-q {
+  background-color: rgba(231, 243, 245, 0.2);
+}
+
+.drake-faq-a-inner {
+  padding: 0 40px 40px 40px;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.8 !important;
+  color: #274472;
+  font-weight: 300 !important;
+  opacity: 0.9;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
+  .drake-faq-fullwidth {
+    padding: 70px 20px;
+  }
+
+  .drake-faq-q {
+    padding: 25px;
+  }
+
+  .drake-faq-a-inner {
+    padding: 0 25px 30px 25px;
+  }
+
+  /* Emerald-style FAQ responsive */
+  .drake-faq-q.emerald-faq-question {
+    padding: 5px 0;
+  }
+
+  .drake-faq-a-inner {
+    padding: 14px 0 0 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .emerald-faq-question {
+    font-size: 1rem;
+  }
+
+  .drake-h1 {
+    font-size: 32px !important;
+  }
+
+  .drake-section-h2 {
+    font-size: 28px !important;
+  }
+
+  .drake-section-p,
+  h3 {
+    font-size: 17px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .drake-faq-header-centered .drake-section-h2 {
+    font-size: 24px !important;
+  }
+
+  .drake-h1 {
+    font-size: 26px !important;
+  }
+
+  .drake-h2 {
+    font-size: 24px !important;
+  }
+
+  .drake-section-p,
+  h3 {
+    font-size: 16px !important;
+  }
+
+  .drake-faq-intro-text {
+    font-size: 18px !important;
+  }
+
+  .drake-faq-q span {
+    font-size: 15px !important;
+  }
+
+  .drake-faq-list {
+    border-radius: 8px;
+  }
+
+  /* Emerald-style FAQ mobile */
+  .drake-faq-item.emerald-faq-item {
+    padding: 15px 0;
+  }
+
+  .drake-faq-icon.emerald-faq-icon {
+    font-size: 20px;
+  }
+
+  .drake-faq-q.emerald-faq-question {
+    font-size: 16px !important;
+  }
+
+  .drake-faq-a-inner {
+    font-size: 16px !important;
+  }
+}
+
+/* ========================================
+   FINAL CTA DESIGN (SECTION 15)
+   Prefix: drake- | Colors: Navy, White, Soft Blue
+   ======================================== */
+
+.drake-final-cta-section {
+  position: relative;
+  padding: 120px 20px;
+  background: url('../../assets/DrakePassage/Footer_Image.jpeg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 60vh;
+  overflow: hidden;
+}
+
+/* Dark Navy Overlay (Replacing the neutral black) */
+.drake-cta-overlay-navy {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(15, 28, 46, 0.85), rgba(39, 68, 114, 0.75));
+  z-index: 1;
+}
+
+.drake-final-cta-inner {
+  max-width: 800px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Heading Fix - with white line */
+.drake-text-white {
+  color: #ffffff !important;
+  font-size: 60px !important;
+  margin-bottom: 30px !important;
+}
+
+.drake-text-white::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #ffffff;
+  margin: 30px auto 0;
+  border-radius: 2px;
+}
+
+/* Custom Divider - hidden, using heading line instead */
+.drake-cta-divider-blue {
+  display: none;
+}
+
+.drake-cta-content-wrap {
+  margin-bottom: 50px;
+}
+
+.drake-cta-paragraph {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 18px !important;
+  line-height: 1.6 !important;
+  font-weight: 300 !important;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 10px;
+}
+
+.drake-cta-lead {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 22px !important;
+  font-weight: 400 !important;
+  color: #ffffff !important;
+}
+
+/* --- The Action Button (No Gold) --- */
+.drake-cta-btn-white {
+  padding: 20px 50px;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  background-color: #ffffff;
+  /* Solid White */
+  color: #274472;
+  /* Navy Text */
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.drake-cta-btn-white:hover {
+  background-color: transparent;
+  color: #ffffff;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+@media (max-width: 900px) {
+  .drake-final-cta-section {
+    padding: 100px 30px;
+  }
+
+  .drake-text-white {
+    font-size: 40px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .drake-text-white {
+    font-size: 32px !important;
+  }
+
+  .drake-cta-lead {
+    font-size: 20px !important;
+  }
+
+  .drake-h1 {
+    font-size: 32px !important;
+  }
+
+  .drake-section-h2 {
+    font-size: 28px !important;
+  }
+
+  .drake-section-p,
+  h3 {
+    font-size: 17px !important;
+  }
+
+  .drake-cta-btn-white {
+    width: 100%;
+    padding: 18px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .drake-final-cta-section {
+    min-height: auto;
+    padding: 80px 20px;
+  }
+
+  .drake-text-white {
+    text-align: center;
+    font-size: 26px !important;
+  }
+
+  .drake-h1 {
+    font-size: 26px !important;
+  }
+
+  .drake-h2 {
+    font-size: 24px !important;
+  }
+
+  .drake-section-p,
+  h3 {
+    font-size: 16px !important;
+  }
+}

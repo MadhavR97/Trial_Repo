@@ -1,0 +1,2473 @@
+/* Center the senianta-hero content text for Antarctica page */
+.senianta-antarctica-senianta-hero .senianta-hero-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ 
+.senianta-antarctica-senianta-hero .senianta-lead,
+.senianta-antarctica-senianta-hero .senianta-sub,
+.senianta-antarctica-senianta-hero .senianta-extra-text {
+  text-align: center;
+}
+ 
+.senianta-hero-buttons--centered {
+  justify-content: center;
+  margin: 0 auto !important;
+}
+ 
+.senianta-primary--no-offset {
+  margin-left: 0 !important;
+}
+ 
+.senianta-hero {
+  min-height: 115vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 160px 80px;
+  position: relative;
+  animation: bgSlider 15s infinite ease-in-out;
+  background-size: cover;
+  background-position: center;
+}
+
+.senianta-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right,
+      rgba(0, 0, 0, 0.75) 30%,
+      rgba(0, 0, 0, 0.4) 60%,
+      rgba(0, 0, 0, 0.2) 100%);
+  z-index: 1;
+}
+
+
+
+.senianta-hero-content {
+  max-width: 990px;
+  position: relative;
+  z-index: 2;
+}
+
+.senianta-hero h1 {
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.senianta-extra-text {
+  line-height: 1.35;
+  color: white;
+  text-align: center;
+  margin-bottom: 12px;
+
+}
+
+.senianta-lead {
+  font-size: 24px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-weight: 500;
+  color: white;
+
+}
+
+.senianta-sub {
+  font-size: 18px;
+  opacity: 0.75;
+  margin-bottom: 25px;
+  font-style: italic;
+  color: white;
+  text-align: center;
+}
+
+.senianta-hero-content .senianta-lead:nth-of-type(2),
+.senianta-hero-content .senianta-lead:nth-of-type(3) {
+  font-size: 15px;
+  line-height: 1.7;
+  opacity: 0.9;
+  max-width: 620px;
+}
+
+.senianta-hero-buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 50px;
+  justify-content: center;
+}
+
+.senianta-primary {
+  background: white;
+  color: black;
+  padding: 14px 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  margin-left: 0;
+  margin-top: 12px;
+}
+
+.senianta-primary:hover {
+  background: #dbeafe;
+}
+
+.senianta-secondary {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 14px 30px;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.senianta-secondary:hover {
+  background: white;
+  color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.senianta-hero,
+.senianta-hero-content,
+.senianta-hero-buttons {
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 900px) {
+  .senianta-hero {
+    padding: 140px 60px 160px 60px;
+    min-height: 100vh;
+  }
+
+  .senianta-hero h1 {
+    font-size: 32px;
+  }
+
+  .senianta-lead {
+    font-size: 17px;
+  }
+
+  .senianta-extra-text {
+    font-size: 17px;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .senianta-hero-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .senianta-primary {
+    margin-left: 0;
+    width: auto;
+  }
+}
+
+@media (max-width: 1024px) {
+
+
+  .senianta-hero {
+    padding: 120px 20px 140px 20px;
+    min-height: 90vh;
+  }
+
+  .senianta-hero h1 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .senianta-lead,
+  .senianta-sub,
+  .senianta-extra-text {
+    text-align: center;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  .senianta-hero-buttons {
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .senianta-primary,
+  .senianta-secondary {
+    width: 90%;
+    text-align: center;
+    padding: 12px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .senianta-hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    margin-left: 0px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+
+
+  .senianta-hero h1 {
+    font-size: 26px;
+  }
+
+  .senianta-lead,
+  .senianta-sub,
+  .senianta-extra-text {
+    font-size: 16px;
+  }
+
+  .senianta-hero {
+    padding: 100px 10px 120px 10px;
+  }
+
+  .senianta-hero-buttons {
+    gap: 10px;
+  }
+}
+
+
+/* =====================================================
+   SECTION 2 — QUICK COMPARISON (Scenic vs Silversea)
+   ===================================================== */
+
+.senianta-glance {
+  position: relative;
+  padding: 70px 20px 80px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.senianta-glance::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 100%;
+  background: url('/luxury-bg-pattern.png') center/cover no-repeat;
+  opacity: 0.03;
+  z-index: 0;
+}
+
+.senianta-glance-inner {
+  max-width: 950px;
+  width: 100%;
+  z-index: 1;
+}
+
+.senianta-glance-inner h2 {
+  font-size: 48px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  color: #274472;
+  margin-top: 0;
+  margin-bottom: 50px;
+  line-height: 1;
+  text-align: center;
+  position: relative;
+}
+
+.senianta-glance-inner h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #274472;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+/* Table senianta-wrapper — enables horizontal scroll on small screens */
+.senianta-glance-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.senianta-glance-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-family: 'Montserrat', sans-serif;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* ---- Header row ---- */
+.senianta-glance-th {
+  padding: 20px 28px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  text-align: left;
+  color: #ffffff;
+  background: #274472;
+}
+
+.senianta-glance-th--feature {
+  width: 30%;
+  border-radius: 0;
+}
+
+.senianta-glance-th--scenic {
+  width: 35%;
+  background: #274472;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.senianta-glance-th--silversea {
+  width: 35%;
+  background: #1a2e4a;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ---- Body rows ---- */
+.senianta-glance-row {
+  transition: background 0.25s ease;
+}
+
+.senianta-glance-row:hover {
+  background: rgba(39, 68, 114, 0.04);
+}
+
+.senianta-glance-row--alt {
+  background: #f3f6fb;
+}
+
+.senianta-glance-row--alt:hover {
+  background: rgba(39, 68, 114, 0.07);
+}
+
+.senianta-glance-td {
+  padding: 20px 28px;
+  font-size: 1rem;
+  line-height: 1.55;
+  font-weight: 300;
+  color: #274472cc;
+  border-bottom: 1px solid rgba(39, 68, 114, 0.08);
+  vertical-align: middle;
+}
+
+.senianta-glance-td--label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  color: #274472;
+  text-transform: uppercase;
+  border-right: 2px solid rgba(39, 68, 114, 0.12);
+}
+
+/* Remove bottom border on last row */
+.senianta-glance-row:last-child .senianta-glance-td {
+  border-bottom: none;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .senianta-glance {
+    padding: 50px 15px 60px;
+  }
+
+  .senianta-glance-inner h2 {
+    font-size: 28px;
+  }
+
+  .senianta-glance-th,
+  .senianta-glance-td {
+    padding: 16px 18px;
+    font-size: 17px;
+  }
+
+  .senianta-glance-td--label {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .senianta-glance-inner h2 {
+    font-size: 24px;
+  }
+
+  .senianta-glance-th,
+  .senianta-glance-td {
+    padding: 14px 14px;
+    font-size: 16px;
+  }
+}
+
+/* =====================================================
+   SECTION 3 — THE BIGGEST DIFFERENCES
+   ===================================================== */
+
+.senianta-differences {
+  padding: 70px 20px 80px;
+  background: #f8fafc; /* Subtle premium soft background */
+  display: flex;
+  justify-content: center;
+}
+
+.senianta-differences-bg,
+.senianta-differences::after {
+  display: none; /* Removed the background image and overlay */
+}
+
+.senianta-differences-content {
+  max-width: 1050px;
+  width: 100%;
+  z-index: 2;
+}
+
+.senianta-differences-card {
+  width: 100%;
+  text-align: center;
+}
+
+.senianta-differences-card h2 {
+  font-size: 48px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  color: #274472;
+  margin-bottom: 40px;
+  line-height: 1.15;
+  position: relative;
+}
+
+.senianta-differences-card h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #274472;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.senianta-differences-columns {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.senianta-diff-col {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 50px 45px;
+  border: 1px solid rgba(39, 68, 114, 0.05);
+  box-shadow: 0 15px 40px rgba(39, 68, 114, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.senianta-diff-col:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(39, 68, 114, 0.12);
+}
+
+.senianta-diff-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #274472;
+  margin-top: 0;
+  margin-bottom: 25px;
+  border-bottom: 1px solid rgba(39, 68, 114, 0.15);
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+.senianta-diff-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.senianta-diff-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.senianta-differences-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  stroke: #c5a059; /* Elegant gold accent for checkmarks */
+  stroke-width: 2;
+  fill: none;
+  margin-top: 2px;
+}
+
+.senianta-diff-list span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #274472cc;
+}
+
+.senianta-diff-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.senianta-diff-vs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: #274472;
+  color: #ffffff;
+  border-radius: 50%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  box-shadow: 0 10px 20px rgba(39, 68, 114, 0.2);
+}
+
+.senianta-differences-senianta-emphasis {
+  font-size: 1.125rem;
+  line-height: 1.625;
+  font-weight: 300;
+  color: #274472cc;
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  margin: 0;
+  padding-top: 10px;
+  border-top: 1px solid rgba(39, 68, 114, 0.15);
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+
+  .senianta-differences-card {
+    padding: 40px 25px;
+  }
+
+  .senianta-differences-card h2 {
+    font-size: 28px;
+  }
+  
+  .senianta-differences-columns {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .senianta-diff-col {
+    padding: 30px 20px;
+  }
+  
+  .senianta-diff-vs {
+    margin: 10px 0;
+  }
+
+  .senianta-diff-list span,
+  .senianta-differences-senianta-emphasis {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 480px) {
+  .senianta-differences-card h2 {
+    font-size: 24px;
+  }
+
+  .senianta-diff-list span,
+  .senianta-differences-senianta-emphasis {
+    font-size: 16px;
+  }
+  .senianta-diff-brand{
+    font-size: 17px;
+  }
+}
+
+/* =====================================================
+   SECTION 4 — SHIP DESIGN AND ONBOARD EXPERIENCE
+   ===================================================== */
+
+.senianta-ship-exp {
+  padding: 70px 20px 80px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+.senianta-ship-exp-inner {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.senianta-ship-exp-image {
+  width: 100%;
+  height: 480px;
+  background: url('../../assets//scenic-vs-silversea-antarctica/scenisilver4.jpg') center/cover no-repeat;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  order: 2;
+}
+
+.senianta-ship-exp-text {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  width: 100%;
+  z-index: 2;
+  box-shadow: none;
+  order: 1;
+}
+
+.senianta-ship-exp-text h2 {
+  font-size: 48px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  color: #274472;
+  margin-bottom: 30px;
+  line-height: 1.15;
+  position: relative;
+}
+
+.senianta-ship-exp-text h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #274472;
+  margin: 15px 0 0 0;
+  border-radius: 2px;
+}
+
+.senianta-ship-exp-text p {
+  font-size: 1.125rem;
+  line-height: 1.625;
+  color: #274472cc;
+  font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0 0 24px 0;
+}
+
+.senianta-ship-exp-text p:last-child {
+  margin-bottom: 0;
+}
+
+.senianta-ship-exp-text .senianta-emphasis {
+  font-size: 1.125rem;
+  line-height: 1.625;
+  font-weight: 300;
+  color: #274472cc;
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+}
+
+@media (max-width: 1024px) {
+  .senianta-ship-exp {
+    padding: 50px 15px 60px;
+  }
+
+  .senianta-ship-exp-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .senianta-ship-exp-image {
+    width: 100%;
+    height: 350px;
+    order: 1; /* Image on top */
+  }
+
+  .senianta-ship-exp-text {
+    order: 2; /* Text below image */
+    padding: 0 15px;
+  }
+
+  .senianta-ship-exp-text h2 {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .senianta-ship-exp-text h2::after {
+    margin: 15px auto 0;
+  }
+
+  .senianta-ship-exp-text p,
+  .senianta-ship-exp-text .senianta-emphasis {
+    font-size: 17px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .senianta-ship-exp {
+    padding: 60px 20px;
+  }
+
+  .senianta-ship-exp-image {
+    height: 240px;
+  }
+
+  .senianta-ship-exp-text h2 {
+    font-size: 24px;
+  }
+
+  .senianta-ship-exp-text p,
+  .senianta-ship-exp-text .senianta-emphasis {
+    font-size: 1rem;
+  }
+}
+
+/* =====================================================
+   SECTION 5 — EXPEDITION STYLE AND EXECUTION
+   ===================================================== */
+
+.senianta-expedition {
+  position: relative;
+  padding: 70px 20px 80px;
+  background: rgb(231, 243, 245);
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.senianta-expedition::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 100%;
+  background: url('/luxury-bg-pattern.png') center/cover no-repeat;
+  opacity: 0.03;
+  z-index: 0;
+}
+
+.senianta-expedition-inner {
+  max-width: 950px;
+  width: 100%;
+  z-index: 1;
+}
+
+.senianta-expedition-inner h2 {
+  font-size: 48px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  color: #274472;
+  margin-top: 0;
+  margin-bottom: 30px;
+  line-height: 1;
+  text-align: center;
+  position: relative;
+}
+
+.senianta-expedition-inner h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #274472;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.senianta-expedition-inner p {
+  font-size: 1.125rem;
+  line-height: 1.625;
+  font-weight: 300;
+  color: #274472cc;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0 0 24px 0;
+  text-align: center;
+}
+
+.senianta-expedition-inner p:last-child {
+  margin-bottom: 0;
+}
+
+.senianta-expedition-inner .senianta-emphasis {
+  font-size: 1.125rem;
+  line-height: 1.625;
+  font-weight: 300;
+  color: #274472cc;
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .senianta-expedition {
+    padding: 50px 15px 60px;
+  }
+
+  .senianta-expedition-inner h2 {
+    font-size: 36px;
+  }
+
+  .senianta-expedition-inner p,
+  .senianta-expedition-inner .senianta-emphasis {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 480px) {
+  .senianta-expedition-inner h2 {
+    font-size: 24px;
+  }
+
+  .senianta-expedition-inner p,
+  .senianta-expedition-inner .senianta-emphasis {
+    font-size: 16px;
+  }
+}
+
+/* =====================================================
+   SECTION 6 — PRICING AND VALUE
+   ===================================================== */
+
+.senianta-pricing-value {
+  position: relative;
+  padding: 70px 20px 80px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.senianta-pricing-value::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 100%;
+  background: url('/luxury-bg-pattern.png') center/cover no-repeat;
+  opacity: 0.03;
+  z-index: 0;
+}
+
+.senianta-pricing-value-inner {
+  max-width: 1100px;
+  width: 100%;
+  z-index: 1;
+}
+
+.senianta-pricing-value-inner h2 {
+  font-size: 48px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  color: #274472;
+  margin-top: 0px;
+  margin-bottom: 50px;
+  line-height: 1;
+  text-align: center;
+  position: relative;
+}
+
+.senianta-pricing-value-inner h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #274472;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.senianta-pricing-intro {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  color: #274472cc;
+  text-align: center;
+  margin-bottom: 60px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.senianta-value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.senianta-value-card {
+  background: #fdfdfd;
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid rgba(39, 68, 114, 0.06);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease;
+}
+
+.senianta-value-card:hover {
+  transform: translateY(-8px);
+}
+
+.senianta-value-icon {
+  width: 42px;
+  height: 42px;
+  stroke: #274472;
+  stroke-width: 1.5px;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.senianta-value-card p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #274472;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.senianta-brand-positioning {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.senianta-brand-pill {
+  flex: 1;
+  background: #f3f6fb;
+  padding: 50px 40px;
+  border-radius: 24px;
+  text-align: center;
+  border: 1px solid rgba(39, 68, 114, 0.04);
+}
+
+.senianta-brand-pill h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #274472;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.senianta-brand-pill p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #274472cc;
+  font-weight: 300;
+}
+
+.senianta-emphasis--decision {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  color: #274472 !important;
+  font-style: italic;
+  font-weight: 300 !important;
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(8, 8, 8, 0.08);
+  max-width: 850px;
+  margin: 0 auto !important;
+}
+
+@media (max-width: 1024px) {
+  .senianta-brand-positioning {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 900px) {
+  .senianta-pricing-value {
+    padding: 50px 15px 60px;
+  }
+  
+  .senianta-pricing-value-inner h2 {
+    font-size: 36px;
+  }
+
+  .senianta-value-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .senianta-pricing-intro {
+    font-size: 17px;
+    margin-bottom: 40px;
+  }
+}
+
+/* =====================================================
+   SECTION 7 — DRAKE PASSAGE EXPERIENCE
+   ===================================================== */
+
+.senianta-drake-passage {
+  position: relative;
+  padding: 70px 20px 80px;
+  background: rgb(231, 243, 245);
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.senianta-drake-passage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 100%;
+  background: url('/luxury-bg-pattern.png') center/cover no-repeat;
+  opacity: 0.03;
+  z-index: 0;
+}
+
+.senianta-drake-passage-inner {
+  max-width: 950px;
+  width: 100%;
+  z-index: 1;
+}
+
+.senianta-drake-passage-inner h2 {
+  font-size: 48px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  color: #274472;
+  margin-top: 0;
+  margin-bottom: 30px;
+  line-height: 1;
+  text-align: center;
+  position: relative;
+}
+
+.senianta-drake-passage-inner h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #274472;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.senianta-drake-content p {
+  font-size: 1.125rem;
+  line-height: 1.625;
+  font-weight: 300;
+  color: #274472cc;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0 0 24px 0;
+  text-align: center;
+}
+
+.senianta-cta-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.senianta-cta-container .senianta-secondary {
+  border: 1px solid #274472;
+  color: #274472;
+  background: transparent;
+  width: auto;
+  text-align: center;
+  padding: 14px 30px;
+}
+
+.senianta-cta-container .senianta-secondary:hover {
+  background: #274472;
+  color: #ffffff;
+}
+
+/* =====================================================
+   SECTION 8 & 9 — CHOICE GRID
+   ===================================================== */
+
+.senianta-choice-section {
+  padding: 70px 20px 80px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+.senianta-choice-inner {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.senianta-choice-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.senianta-choice-card {
+  background: #fdfdfd;
+  padding: 60px 45px;
+  border-radius: 24px;
+  box-shadow: 0 15px 45px rgba(39, 68, 114, 0.08);
+  border: 1px solid rgba(8, 8, 8, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.senianta-choice-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(39, 68, 114, 0.12);
+}
+
+.senianta-choice-card h2 {
+  font-size: 36px;
+  font-family: 'Playfair Display', serif;
+  color: #274472;
+  margin-bottom: 35px;
+  position: relative;
+  padding-bottom: 15px;
+  text-align: left;
+}
+
+.senianta-choice-card h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: #274472;
+}
+
+.senianta-choice-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.senianta-choice-list li {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #274472cc;
+  position: relative;
+  padding-left: 30px;
+  text-align: left;
+}
+
+.senianta-choice-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #274472;
+  font-weight: bold;
+}
+
+/* =====================================================
+   SECTION 10 — COMMON MISTAKES
+   ===================================================== */
+
+.senianta-mistakes {
+  position: relative;
+  padding: 70px 20px 80px;
+  background: rgb(231, 243, 245);
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.senianta-mistakes::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 100%;
+  background: url('/luxury-bg-pattern.png') center/cover no-repeat;
+  opacity: 0.03;
+  z-index: 0;
+}
+
+.senianta-mistakes-inner {
+  max-width: 950px;
+  width: 100%;
+  z-index: 1;
+}
+
+.senianta-mistakes-inner h2 {
+  font-size: 48px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  color: #274472;
+  margin-bottom: 50px;
+  margin-top: 0;
+  line-height: 1.15;
+  text-align: center;
+  position: relative;
+}
+
+.senianta-mistakes-inner h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #274472;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.senianta-mistakes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.senianta-mistake-card {
+  background: #ffffff;
+  padding: 23px;
+  border-radius: 20px;
+  border: 1px solid rgba(39, 68, 114, 0.08);
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.senianta-mistake-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(39, 68, 114, 0.15);
+  box-shadow: 0 20px 60px rgba(39, 68, 114, 0.06);
+}
+
+.senianta-mistake-icon {
+  width: 32px;
+  height: 32px;
+  stroke: #c84a48;
+  stroke-width: 1.5;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.senianta-mistake-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.senianta-mistake-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #274472;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.senianta-mistake-desc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  color: #274472cc;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.senianta-consultant-tip {
+  background: #f3f6fb;
+  padding: 40px;
+  border-radius: 24px;
+  text-align: center;
+  max-width: 900px;
+  margin: 40px auto 0;
+  border: 1px dashed rgba(39, 68, 114, 0.2);
+}
+
+.senianta-consultant-tip p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.15rem;
+  color: #274472;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .senianta-consultant-tip p { font-size: 17px; }
+}
+
+@media (max-width: 480px) {
+  .senianta-consultant-tip p { font-size: 16px; }
+}
+
+.senianta-consultant-tip strong {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #274472;
+  font-size: 1rem;
+  line-height: 1.625;
+  font-weight: 300;
+  color: #274472cc;
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  text-align: center;
+}
+
+/* =====================================================
+   RESPONSIVE OVERRIDES
+   ===================================================== */
+
+@media (max-width: 1024px) {
+  .senianta-choice-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .senianta-mistakes-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .senianta-pricing-value-inner h2,
+  .senianta-drake-passage-inner h2,
+  .senianta-mistakes-inner h2 {
+    font-size: 28px;
+  }
+
+  .senianta-pricing-content p,
+  .senianta-drake-content p,
+  .senianta-choice-list li,
+  .senianta-mistakes-inner .senianta-emphasis {
+    font-size: 17px;
+    text-align: center;
+  }
+  
+  .senianta-choice-card h2 {
+    text-align: center;
+  }
+  
+  .senianta-choice-card h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 480px) {
+  .senianta-pricing-value-inner h2,
+  .senianta-drake-passage-inner h2,
+  .senianta-mistakes-inner h2 {
+    font-size: 24px;
+  }
+
+  .senianta-choice-card {
+    padding: 40px 25px;
+  }
+
+  .senianta-choice-card h2 {
+    font-size: 24px;
+  }
+}
+
+
+/* =====================================================
+   SECTION 11 — EXPERT RECOMMENDATION
+   ===================================================== */
+
+.senianta-expert-rec {
+  padding: 70px 20px 80px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+.senianta-expert-inner {
+  max-width: 1100px;
+  width: 100%;
+}
+
+.senianta-expert-inner h2 {
+  font-size: 48px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  color: #274472;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 50px;
+  line-height: 1.15;
+  position: relative;
+}
+
+.senianta-expert-inner h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #274472;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.senianta-verdict-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.senianta-verdict-card {
+  padding: 50px 40px;
+  border-radius: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.senianta-verdict-card--scenic {
+  background: #f7fafd;
+  border: 1px solid rgba(39, 68, 114, 0.08);
+}
+
+.senianta-verdict-card--silversea {
+  background: #fdfaf7;
+  border: 1px solid rgba(39, 68, 114, 0.08);
+}
+
+.senianta-verdict-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+}
+
+.senianta-verdict-icon {
+  width: 40px;
+  height: 40px;
+  stroke: #274472;
+  stroke-width: 1.5;
+  margin-bottom: 25px;
+}
+
+.senianta-verdict-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: #274472;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.senianta-verdict-card p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #274472cc;
+  font-weight: 300;
+}
+
+.senianta-verdict-card strong {
+  color: #274472;
+  font-weight: 700;
+}
+
+.senianta-expert-seal {
+  background: #f3f6fb;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto;
+  border: 1px solid rgba(39, 68, 114, 0.1);
+  position: relative;
+}
+
+.senianta-expert-seal::before {
+  content: "Professional Verdict";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #274472;
+  color: #ffffff;
+  padding: 4px 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 50px;
+}
+
+.senianta-expert-seal p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.15rem;
+  color: #274472;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .senianta-verdict-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* =====================================================
+   SECTION 12 — WHAT HAPPENS NEXT
+   ===================================================== */
+
+.senianta-what-next {
+  padding: 70px 20px 80px;
+  background: rgb(231, 243, 245);
+  display: flex;
+  justify-content: center;
+}
+
+.senianta-what-next-inner {
+  max-width: 1100px;
+  width: 100%;
+}
+
+.senianta-what-next-inner h2 {
+  font-size: 48px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  color: #274472;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 60px;
+  line-height: 1.15;
+  position: relative;
+}
+
+.senianta-what-next-inner h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #274472;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.senianta-steps-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.senianta-step-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.senianta-step-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 60px;
+  color: #2744721a;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.senianta-step-item p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #274472;
+  font-weight: 300;
+}
+
+/* =====================================================
+   SECTION 13 — WHY BOOK WITH ANGELA HUGHES
+   ===================================================== */
+
+.senianta-why-book {
+  padding: 70px 20px 80px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+.senianta-why-book-inner {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.senianta-why-book-inner h2 {
+  font-size: 48px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  color: #274472;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 50px;
+  line-height: 1.15;
+  position: relative;
+}
+
+.senianta-why-book-inner h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #274472;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.senianta-why-book-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  margin-top: 50px;
+}
+
+.senianta-why-book-left {
+  flex: 1.2;
+}
+
+.senianta-why-book-right {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+}
+
+.senianta-why-book-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(39, 68, 114, 0.18);
+  border: 1px solid rgba(39, 68, 114, 0.05);
+  background: white;
+}
+
+.senianta-why-book-portrait {
+  width: 100%;
+  height: 580px;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.senianta-why-book-image-wrapper:hover .senianta-why-book-portrait {
+  transform: scale(1.05);
+}
+
+.senianta-why-story {
+  width: 100%;
+}
+
+.senianta-why-story p {
+  font-family: 'Montserrat', sans-serif;
+
+  line-height: 1.8;
+  color: #274472cc;
+  margin-bottom: 25px;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .senianta-why-story p { font-size: 17px;
+  text-align: center; }
+  .senianta-lead-expertise{
+    font-size: 20px !important;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .senianta-why-story p { font-size: 16px; }
+  .senianta-lead-expertise{
+    font-size: 16px !important;
+    text-align: center;
+  }
+  .senianta-why-benefits-grid h3{
+    font-size: 20px;
+  }
+}
+
+.senianta-lead-expertise {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 1.6rem;
+  color: #274472 !important;
+  line-height: 1.4 !important;
+  font-weight: 500 !important;
+  margin-bottom: 30px !important;
+}
+
+.senianta-emphasis--guided {
+  font-style: italic;
+  font-size: 1.3rem;
+  color: #274472 !important;
+  margin-top: 40px;
+  padding-left: 20px;
+  border-left: 3px solid #27447233;
+}
+
+.senianta-why-benefits-grid {
+  width: 100%;
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+  padding: 40px;
+  border-radius: 30px;
+  border: 1px solid rgba(39, 68, 114, 0.1);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  box-shadow: 0 25px 50px rgba(39, 68, 114, 0.06);
+  margin-top: 40px;
+}
+
+.senianta-why-benefits-grid h3 {
+  grid-column: 1 / -1;
+  font-family: 'Playfair Display', serif !important;
+  font-size: 24px !important;
+  color: #274472;
+  margin-bottom: 10px;
+  text-align: left;
+  font-weight: 500 !important;
+}
+
+.senianta-benefit-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.senianta-benefit-item:hover {
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(39, 68, 114, 0.05);
+  transform: translateY(-3px);
+}
+
+.senianta-benefit-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  background: rgba(39, 68, 114, 0.05);
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.senianta-benefit-item:hover .senianta-benefit-icon-wrap {
+  background: #274472;
+}
+
+.senianta-benefit-icon {
+  width: 24px;
+  height: 24px;
+  stroke: #274472;
+  stroke-width: 1.5;
+  transition: all 0.3s ease;
+}
+
+.senianta-benefit-item:hover .senianta-benefit-icon {
+  stroke: #ffffff;
+}
+
+.senianta-benefit-item p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px;
+  color: #274472cc;
+  line-height: 1.4;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* =====================================================
+   SECTION 14 — AUTHOR PROOF (PROFESSIONAL CARD)
+   ===================================================== */
+
+.senianta-author-proof {
+  padding: 70px 20px 80px;
+  background: rgb(231, 243, 245);
+  display: flex;
+  justify-content: center;
+}
+
+.senianta-author-proof-inner {
+  max-width: 900px;
+  width: 100%;
+}
+
+.senianta-professional-card {
+  background: #ffffff;
+  padding: 60px;
+  border-radius: 30px;
+  box-shadow: 0 30px 80px rgba(39, 68, 114, 0.12);
+  border: 1px solid rgba(39, 68, 114, 0.05);
+}
+
+.senianta-card-header {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 30px;
+}
+
+.senianta-auth-icon {
+  width: 50px;
+  height: 50px;
+  stroke: #274472;
+  stroke-width: 1.5;
+  flex-shrink: 0;
+}
+
+.senianta-auth-title h3 {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 32px !important;
+  color: #274472;
+  margin-bottom: 5px;
+  font-weight: 500 !important;
+}
+
+.senianta-auth-role {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #27447288;
+}
+
+.senianta-auth-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.senianta-auth-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 16px;
+}
+
+.senianta-stat-icon {
+  width: 32px;
+  height: 32px;
+  stroke: #274472;
+  stroke-width: 1.5;
+  opacity: 0.7;
+}
+
+.senianta-stat-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.senianta-auth-stat-item .senianta-stat-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  color: #274472;
+  font-weight: 500;
+}
+
+.senianta-auth-stat-item .senianta-stat-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #274472cc;
+}
+
+.senianta-auth-recognition h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: #274472;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.senianta-recognition-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.senianta-recognition-list li {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #274472cc;
+  position: relative;
+  padding-left: 30px;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .senianta-recognition-list li { font-size: 17px; }
+  .senianta-stat-icon{font-size: 20px;}
+}
+
+@media (max-width: 480px) {
+  .senianta-recognition-list li { font-size: 16px; }
+}
+
+.senianta-recognition-list li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: #274472;
+}
+
+@media (max-width: 768px) {
+  .senianta-professional-card {
+    padding: 40px 30px;
+  }
+  .senianta-auth-stat-item .senianta-stat-val{
+  font-size: 32px;
+}
+  
+  .senianta-card-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .senianta-auth-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .senianta-auth-title h3 {
+    font-size: 28px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .senianta-auth-title h3 {
+    font-size: 24px !important;
+    margin-bottom: 22px;
+  }
+  .senianta-auth-stat-item .senianta-stat-val {
+    font-size: 20px;
+  }
+}
+
+
+/* =====================================================
+   SECTION 15 — FAQ SECTION
+   ===================================================== */
+
+.senianta-faq-section {
+  padding: 70px 20px 80px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+.senianta-faq-inner {
+  max-width: 900px;
+  width: 100%;
+}
+
+.senianta-faq-inner h2 {
+  font-size: 32px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  color: #274472;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 25px;
+  line-height: 1.1;
+}
+
+.senianta-faq-inner h2::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  background-color: #274472;
+  margin: 30px auto 0;
+}
+
+.senianta-faq-accordion {
+  margin-top: 80px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.senianta-faq-item {
+  border-bottom: 1px solid #e0e0e0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.senianta-faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+    color: #2f4a6d;
+    font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* .senianta-faq-item:hover .senianta-faq-question {
+  color: #c5a059;
+} */
+
+.senianta-faq-icon {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: none; /* Icons swapped in JSX, no rotate needed */
+}
+
+.senianta-faq-item.senianta-active .senianta-faq-icon {
+  transform: none; /* Icons swapped in JSX, no rotate needed */
+}
+
+.senianta-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+
+.senianta-faq-item.senianta-active .senianta-faq-answer {
+  max-height: 500px; /* Reduced for better animation feel */
+  padding-bottom: 35px;
+}
+
+.senianta-faq-answer p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #274472cc;
+  font-weight: 300;
+  margin: 0;
+  max-width: 90%;
+}
+
+@media (max-width: 480px) {
+  .senianta-faq-answer p { font-size: 16px; }
+}
+
+@media (max-width: 768px) {
+  .senianta-faq-section {
+    padding: 50px 15px 60px;
+  }
+  
+  .senianta-faq-inner h2 {
+    font-size: 32px;
+  }
+  
+  .senianta-faq-question {
+    font-size: 16px;
+    padding: 20px 0;
+  }
+}
+
+
+/* =====================================================
+   SECTION 16 — FINAL REACH (CTA)
+   ===================================================== */
+
+.senianta-final-reach {
+  position: relative;
+  padding: 100px 20px;
+   background: url('../../assets/scenic-vs-silversea-antarctica/scenisilver6.jpg') center/cover no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+
+.senianta-final-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.senianta-final-reach-inner {
+  max-width: 700px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.senianta-final-reach h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  color: #ffffff;
+  position: relative;
+  font-weight: 500;
+}
+
+.senianta-final-reach h2::after {
+  content: "";
+  width: 70px;
+  height: 2px;
+  background: white;
+  display: block;
+  margin: 14px auto 0;
+}
+
+@media (max-width: 768px) {
+  .senianta-final-reach h2 { font-size: 32px; }
+  .senianta-final-reach p { font-size: 17px; }
+}
+
+@media (max-width: 480px) {
+  .senianta-final-reach h2 { font-size: 26px; }
+  .senianta-final-reach p { font-size: 16px; }
+}
+
+.senianta-final-reach p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin-bottom: 28px;
+  font-weight: 300;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #ffffffcc;
+}
+
+.senianta-final-reach .senianta-hero-buttons {
+  margin-top: 50px;
+}
+
+@media (max-width: 1024px) {
+  .senianta-final-reach {
+    padding: 120px 30px;
+    background-attachment: scroll; /* Fixed is buggy on mobile */
+  }
+}
+
+/* =====================================================
+   RESPONSIVE OVERRIDES FINAL (COMPREHENSIVE)
+   ===================================================== */
+
+/* --- TABLET / SMALL LAPTOP (1024PX) --- */
+@media (max-width: 1024px) {
+  .senianta-hero-inner h1 {
+    font-size: 56px;
+  }
+
+  .senianta-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .senianta-content-grid {
+    gap: 40px;
+  }
+
+  .senianta-value-grid, .senianta-steps-grid, .senianta-verdict-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .senianta-why-book-flex {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .senianta-faq-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .senianta-faq-item h4 {
+    padding-left: 40px;
+  }
+
+  .senianta-faq-item h4::before {
+    left: 0;
+  }
+}
+
+/* --- TABLET STANDARDIZATION (1024PX) --- */
+@media (max-width: 1024px) {
+  .senianta-hero, .senianta-glance, .senianta-differences, .senianta-ship-exp, .senianta-expedition, 
+  .senianta-pricing-value, .senianta-drake-passage, .senianta-choice-section, .senianta-mistakes, 
+  .senianta-expert-rec, .senianta-what-next, .senianta-why-book, .senianta-author-proof, .senianta-faq-section {
+    padding: 50px 15px 60px;
+  }
+
+  .senianta-hero h1 {
+    font-size: 32px;
+    margin-bottom: 25px;
+  }
+
+  .senianta-hero .senianta-lead {
+    font-size: 17px;
+  }
+
+  .senianta-hero .senianta-sub {
+    font-size: 16px;
+  }
+
+  .senianta-hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 35px;
+  }
+
+  .senianta-primary, .senianta-secondary {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .senianta-expert-inner h2, .senianta-what-next-inner h2, .senianta-why-book-inner h2, 
+  .senianta-faq-inner h2, .senianta-mistakes-inner h2, .senianta-glance-inner h2,
+  .senianta-pricing-value-inner h2, .senianta-drake-passage-inner h2 {
+    font-size: 28px;
+    margin-bottom: 35px;
+  }
+
+  /* Grid Stack for Tablet */
+  .senianta-glance-table-wrap {
+    margin-top: 20px;
+  }
+
+  .senianta-value-grid, .senianta-steps-grid, .senianta-verdict-container, 
+  .senianta-brand-senianta-comparison-grid, .senianta-mistakes-grid, .senianta-why-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .senianta-why-book-portrait {
+    height: 450px !important;
+  }
+}
+
+/* --- MOBILE LANDSCAPE (768PX) --- */
+@media (max-width: 768px) {
+  .senianta-hero-section, .senianta-summary-section, .senianta-ship-comparison, 
+  .senianta-content-section, .senianta-price-section, .senianta-comparison-section, 
+  .senianta-antarctica-details, .senianta-mistakes-section, .senianta-expert-rec, 
+  .senianta-what-next, .senianta-why-book, .senianta-author-proof, .senianta-faq-section {
+    padding: 80px 25px;
+  }
+
+  .senianta-hero-inner h1 {
+    font-size: 32px;
+  }
+
+  .senianta-expert-inner h2, .senianta-what-next-inner h2, .senianta-why-book-inner h2, 
+  .senianta-faq-inner h2, .senianta-mistakes-inner h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .senianta-content-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .senianta-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .senianta-brand-positioning, .senianta-ship-stats-grid, .senianta-antarctica-details-grid, .senianta-mistakes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .senianta-column-label {
+    margin-top: 20px;
+  }
+
+  /* Handle Comparison Table Scroll */
+  .senianta-comparison-grid {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+    gap: 20px;
+    justify-content: flex-start;
+  }
+
+  .senianta-comparison-label, .senianta-brand-col {
+    min-width: 250px;
+    flex-shrink: 0;
+  }
+
+  .senianta-detailed-comparison .senianta-comparison-inner {
+    width: 100%;
+  }
+
+  .senianta-hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin: 35px auto 0;
+  }
+
+  .senianta-primary, .senianta-secondary {
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .senianta-professional-card {
+    padding: 40px 20px;
+  }
+
+  .senianta-auth-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .senianta-final-reach h2 {
+    font-size: 32px;
+  }
+
+  .senianta-cta-glass-card {
+    padding: 40px 25px;
+  }
+}
+
+/* --- SMALL MOBILE (480PX) --- */
+@media (max-width: 480px) {
+  .senianta-hero-section, .senianta-summary-section, .senianta-ship-comparison, 
+  .senianta-content-section, .senianta-price-section, .senianta-comparison-section, 
+  .senianta-antarctica-details, .senianta-mistakes-section, .senianta-expert-rec, 
+  .senianta-what-next, .senianta-why-book, .senianta-author-proof, .senianta-faq-section {
+    padding: 60px 20px;
+  }
+
+  .senianta-hero-inner h1 {
+    font-size: 26px;
+  }
+  .senianta-verdict-card p{
+    font-size: 16px;
+  }
+  .senianta-expert-inner h2, .senianta-what-next-inner h2, .senianta-why-book-inner h2, 
+  .senianta-faq-inner h2, .senianta-mistakes-inner h2 {
+    font-size: 24px;
+  }
+  .senianta-lead-expertise{
+    font-size: 18px;
+  }
+  .senianta-benefit-item p{
+    font-size: 16px;
+  }
+
+  .senianta-stat-val {
+    font-size: 32px;
+  }
+  .senianta-emphasis--guided{
+    font-size: 16px;
+  }
+
+  .senianta-category-pill, .senianta-brand-pill {
+    padding: 10px 20px;
+  }
+
+  .senianta-expert-seal {
+    padding: 30px 20px;
+  }
+
+  .senianta-advantage-pill {
+    font-size: 10px;
+  }
+  
+  .senianta-step-num {
+    font-size: 48px;
+  }
+}
+
+/* --- PROMOTIONAL VIDEO SECTION --- */
+.senianta-promo-video-wrapper {
+  max-width: 1000px;
+  margin: 60px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(39, 68, 114, 0.1);
+  background: #000;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  z-index: 2;
+}
+
+.senianta-promo-video-wrapper:hover {
+  transform: translateY(-5px) scale(1.005);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
+}
+
+.senianta-promo-video-player {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 1100px) {
+  .senianta-promo-video-wrapper {
+    max-width: 90%;
+    margin: 50px auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .senianta-promo-video-wrapper {
+    margin: 40px 20px;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .senianta-promo-video-wrapper {
+    margin: 30px 15px;
+    border-radius: 8px;
+  }
+}

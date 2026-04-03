@@ -1,0 +1,2133 @@
+/* =================================================
+   ANTARCTICA COST PAGE — AntarcticaCost.css
+   All class names prefixed with anta_
+   Mirrors EmeraldYachts.css structure & patterns
+   ================================================= */
+
+
+/* ================= HERO ================= */
+.anta_hero_section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px 60px;
+}
+
+.anta_hero_bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: 1s ease;
+}
+
+.anta_hero_overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.anta_hero_content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  text-align: center;
+  color: white;
+}
+
+.anta_hero_content h1 {
+  margin-bottom: 20px;
+}
+
+.anta_hero_content p {
+  margin-bottom: 12px;
+  color: white;
+}
+.anta_hero_p{
+   margin-bottom: 12px;
+  color: white;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+/* READ MORE */
+.anta_readmore_wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.anta_readmore_btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  position: relative;
+}
+
+.anta_readmore_btn::after {
+  content: "";
+  width: 0;
+  height: 1px;
+  background: white;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  transition: 0.3s;
+}
+
+.anta_readmore_btn:hover::after {
+  width: 100%;
+}
+
+/* BUTTONS */
+.anta_hero_buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.anta_primary_btn {
+  padding: 14px 26px;
+  background: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: 0.3s;
+}
+
+.anta_primary_btn:hover {
+  background: #dbeafe;
+}
+
+.anta_secondary_btn {
+  padding: 14px 26px;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: 0.3s;
+}
+
+.anta_secondary_btn:hover {
+  background: white;
+  color: black;
+}
+
+/* RESPONSIVE — HERO */
+@media (max-width: 1024px) {
+  .anta_hero_content h1 {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 768px) {
+  .anta_hero_section {
+    padding: 110px 15px 50px;
+  }
+
+  .anta_hero_content h1 {
+    font-size: 32px;
+  }
+  .anta_hero_content p{
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 480px) {
+  .anta_hero_content h1 {
+    font-size: 26px;
+  }
+  .anta_hero_content p{
+    font-size: 16px;
+  }
+
+  .anta_primary_btn,
+  .anta_secondary_btn {
+    width: 100%;
+  }
+}
+
+
+/* ================= SHARED: COST LIST (reused across sections) ================= */
+.anta_cost_list {
+  margin-top: 20px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.anta_cost_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f7f9fb;
+  padding: 16px 18px;
+  border-radius: 6px;
+  border: 1px solid #e4e9ee;
+}
+
+.anta_cost_item p {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #2f4a6d;
+  text-align: left;
+}
+
+.anta_cost_item span {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #2f4a6d;
+  text-align: right;
+}
+
+.anta_cost_item--total {
+  background: #eef2f5;
+  border-color: #2f4a6d;
+}
+
+.anta_cost_item--total p,
+.anta_cost_item--total span {
+  font-weight: 700;
+  color: #2f4a6d;
+}
+
+@media (max-width: 768px) {
+  .anta_cost_item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .anta_cost_item span {
+    text-align: left;
+  }
+}
+
+
+/* ================= SHARED: METHOD STEPS (reused across sections) ================= */
+.anta_method_steps {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.anta_method_step {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #ffffff;
+  padding: 14px 16px;
+  border-radius: 6px;
+  border: 1px solid #e4e9ee;
+}
+
+.anta_step_number {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: #2f4a6d;
+  min-width: 40px;
+  text-align: left;
+}
+
+.anta_method_step p {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #2f4a6d;
+  text-align: left;
+}
+
+
+/* ================= SHARED: EXPERT CARDS (reused across sections) ================= */
+.anta_expert_cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.anta_expert_card {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid #e4e9ee;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.anta_expert_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border-color: #d6dee6;
+}
+
+.anta_icon_box {
+  width: 42px;
+  height: 42px;
+  background: #eef2f5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.anta_icon_box i {
+  font-size: 16px;
+  color: #2f4a6d;
+}
+
+.anta_expert_card p {
+  margin: 0;
+  font-size: 1rem;
+  color: #2f4a6d;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .anta_expert_cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ================= SHARED: HIGHLIGHT UTILS ================= */
+.anta_highlight_text {
+  color: #274472;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.anta_highlight_blue {
+  color: #2f4a6d;
+  font-weight: 500;
+}
+
+
+/* ================= SECTION 2 — QUICK COST OVERVIEW ================= */
+.anta_overview_section {
+  background: #eef2f5;
+  padding: 70px 20px 80px;
+  text-align: center;
+}
+
+.anta_overview_inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.anta_overview_inner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 500;
+  color: #2f4a6d;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.anta_overview_inner h2::after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: #2f4a6d;
+  display: block;
+  margin: 12px auto 0;
+}
+
+.anta_overview_lead {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  font-weight: 300;
+  color: #274472cc;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+/* TIER CARDS */
+.anta_tier_cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 40px;
+}
+
+.anta_tier_card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 36px 24px 32px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+  border-top: 4px solid transparent;
+  transition: all 0.35s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.anta_tier_card::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.anta_tier_card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.anta_tier_card:hover::before {
+  opacity: 1;
+}
+
+
+.anta_tier_icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.anta_tier_card--entry   .anta_tier_icon { background: #e8f0f8; }
+.anta_tier_card--premium .anta_tier_icon { background: #e0e8f2; }
+.anta_tier_card--luxury  .anta_tier_icon { background: #faf3e7; }
+
+.anta_tier_icon i {
+  font-size: 20px;
+}
+
+.anta_tier_card--entry   .anta_tier_icon i { color: #5b8db8; }
+.anta_tier_card--premium .anta_tier_icon i { color: #2f4a6d; }
+.anta_tier_card--luxury  .anta_tier_icon i { color: #c6a15b; }
+
+.anta_tier_label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #274472cc;
+  margin-bottom: 14px;
+}
+
+.anta_tier_price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2f4a6d;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.anta_tier_sub {
+  font-size: 12px;
+  font-weight: 400;
+  color: #274472aa;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* OVERVIEW NOTE */
+.anta_overview_note {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #ffffff;
+  border-radius: 0 10px 10px 0;
+  padding: 20px 24px;
+  text-align: left;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.anta_overview_note i {
+  font-size: 18px;
+  color: #2f4a6d;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.anta_overview_note p {
+  font-size: 1rem;
+  line-height: 1.7;
+  font-weight: 300;
+  color: #274472cc;
+  margin: 0;
+}
+
+.anta_overview_note p strong {
+  color: #2f4a6d;
+  font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .anta_overview_inner h2 { font-size: 36px; }
+  .anta_tier_price { font-size: 22px; }
+}
+
+@media (max-width: 768px) {
+  .anta_overview_section { padding: 50px 15px 60px; }
+  .anta_overview_inner h2 { font-size: 28px; }
+  .anta_tier_cards { grid-template-columns: 1fr; gap: 16px; }
+  .anta_tier_card { padding: 28px 20px; }
+}
+
+@media (max-width: 480px) {
+  .anta_overview_inner h2 { font-size: 24px; }
+  .anta_tier_price { font-size: 18px; }
+  .anta_overview_lead { font-size: 16px; }
+}
+
+
+/* ================= SECTION 3 — REAL PRICING EXAMPLES ================= */
+.anta_examples_section {
+  background: #ffffff;
+  padding: 70px 20px 80px;
+  text-align: center;
+}
+
+.anta_examples_inner {
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+.anta_examples_inner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 500;
+  color: #2f4a6d;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.anta_examples_inner h2::after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: #2f4a6d;
+  display: block;
+  margin: 12px auto 0;
+}
+
+.anta_examples_lead {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  font-weight: 300;
+  color: #274472cc;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+/* VOYAGE CARDS */
+.anta_voyage_cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 36px;
+}
+
+.anta_voyage_card {
+  background: #f7f9fb;
+  border-radius: 14px;
+  padding: 28px 20px 0;
+  border: 1px solid #e4e9ee;
+  text-align: left;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.anta_voyage_card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+  border-color: #c8d5e4;
+  background: #ffffff;
+}
+
+.anta_voyage_nights {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #274472aa;
+  margin-bottom: 10px;
+}
+
+.anta_voyage_brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #2f4a6d;
+  line-height: 1.3;
+  margin-bottom: 18px;
+  min-height: 52px;
+}
+
+.anta_voyage_brand span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #274472cc;
+}
+
+.anta_voyage_divider {
+  width: 36px;
+  height: 2px;
+  background: #2f4a6d;
+  margin-bottom: 18px;
+  border-radius: 2px;
+}
+
+.anta_voyage_price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2f4a6d;
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+
+.anta_voyage_from {
+  display: block;
+  font-family: 'Playfair Display', serif !important;
+  font-size: 11px;
+  font-weight: 400;
+  color: #274472aa;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.anta_voyage_pp {
+  font-size: 11px;
+  font-weight: 400;
+  color: #274472aa;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+/* COLOR BAR at bottom of each card */
+.anta_voyage_bar {
+  height: 4px;
+  width: 100%;
+  margin-top: auto;
+  border-radius: 0 0 14px 14px;
+}
+
+
+.anta_examples_note {
+  font-size: 1rem;
+  line-height: 1.7;
+  font-weight: 300;
+  color: #274472cc;
+  font-style: italic;
+  margin: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .anta_examples_inner h2 { font-size: 36px; }
+  .anta_voyage_cards { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .anta_voyage_brand { min-height: auto; font-size: 17px; }
+}
+
+@media (max-width: 768px) {
+  .anta_examples_section { padding: 50px 15px 60px; }
+  .anta_examples_inner h2 { font-size: 28px; }
+  .anta_voyage_cards { grid-template-columns: 1fr; gap: 16px; }
+  .anta_voyage_card { padding: 24px 20px 0; }
+  .anta_examples_lead { font-size: 17px; }
+}
+
+@media (max-width: 480px) {
+  .anta_examples_inner h2 { font-size: 24px; }
+  .anta_examples_lead { font-size: 15px; margin-bottom: 30px; }
+  .anta_voyage_card { padding: 22px 18px 0; }
+  .anta_voyage_nights { font-size: 10px; margin-bottom: 8px; }
+  .anta_voyage_brand { font-size: 16px; margin-bottom: 10px; min-height: auto; }
+  .anta_voyage_brand span { font-size: 12px; }
+  .anta_voyage_divider { margin-bottom: 14px; width: 30px; }
+  .anta_voyage_price { font-size: 18px; margin-bottom: 4px; }
+  .anta_voyage_from { font-size: 10px; }
+  .anta_voyage_pp { font-size: 10px; margin-bottom: 20px; }
+}
+
+/* ================= SECTION 4 — PRICING LADDER ================= */
+.anta_ladder_section {
+  background: #eef2f5;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.anta_ladder_inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.anta_ladder_inner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 500;
+  color: #2f4a6d;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.anta_ladder_inner h2::after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: #2f4a6d;
+  display: block;
+  margin: 12px auto 0;
+}
+
+.anta_ladder_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  text-align: left;
+}
+
+.anta_ladder_card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 28px 24px;
+  border: 1px solid #e4e9ee;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.anta_ladder_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.09);
+}
+
+.anta_ladder_badge {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: #eef2f5;
+  color: #2f4a6d;
+  margin-bottom: 14px;
+}
+
+.anta_ladder_badge--premium { background: #e8f0fe; color: #1a3a6d; }
+.anta_ladder_badge--luxury  { background: #fdf3e7; color: #7a4a00; }
+.anta_ladder_badge--discovery { background: #e6f4ea; color: #1a5e2a; }
+
+.anta_ladder_price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #2f4a6d;
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+
+.anta_ladder_price span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #274472cc;
+  font-family: 'Playfair Display', serif !important;
+}
+
+.anta_ladder_label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #274472cc;
+  margin-bottom: 4px;
+}
+
+.anta_ladder_card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #274472cc;
+  margin-bottom: 10px;
+}
+
+.anta_ladder_focus {
+  font-size: 0.9rem !important;
+  font-style: italic;
+  color: #274472aa !important;
+  margin-bottom: 0 !important;
+  border-top: 1px solid #e4e9ee;
+  padding-top: 10px;
+  margin-top: 6px;
+}
+
+@media (max-width: 1024px) {
+  .anta_ladder_grid { gap: 15px; }
+}
+
+@media (max-width: 768px) {
+  .anta_ladder_inner h2 { font-size: 28px; margin-bottom: 30px; }
+  .anta_ladder_card { padding: 24px 20px; }
+  .anta_ladder_price { font-size: 22px; margin-bottom: 10px; }
+  .anta_ladder_badge { font-size: 11px; padding: 4px 12px; margin-bottom: 10px; }
+}
+
+@media (max-width: 480px) {
+  .anta_ladder_inner h2 { font-size: 24px; margin-bottom: 25px; }
+  .anta_ladder_card { padding: 20px 18px; }
+  .anta_ladder_badge { font-size: 10px; padding: 3px 10px; margin-bottom: 8px; }
+  .anta_ladder_price { font-size: 18px; margin-bottom: 8px; }
+  .anta_ladder_price span { font-size: 12px; display: inline-block; margin-top: 0; margin-left: 4px; }
+  .anta_ladder_label { font-size: 10px; margin-bottom: 2px; }
+  .anta_ladder_card p { font-size: 15px; margin-bottom: 8px; }
+  .anta_ladder_focus { font-size: 13px !important; padding-top: 8px; margin-top: 4px; }
+}
+
+
+/* ================= SECTION 5 — WHERE MOST CLIENTS FALL ================= */
+.anta_clients_section {
+  background: #f7f9fb;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.anta_clients_inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.anta_clients_inner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 500;
+  color: #2f4a6d;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.anta_clients_inner h2::after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: #2f4a6d;
+  display: block;
+  margin: 12px auto 0;
+}
+
+.anta_clients_inner p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  font-weight: 300;
+  color: #274472cc;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .anta_clients_inner p { font-size: 17px; }
+}
+
+@media (max-width: 480px) {
+  .anta_clients_inner p { font-size: 16px; }
+}
+
+
+/* ================= SECTION 6 — MID-PAGE CTA ================= */
+.anta_midcta_section {
+  position: relative;
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+  background: url("../../assets/antarctica-cruise-cost/anta4.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.anta_midcta_overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.62);
+}
+
+.anta_midcta_inner {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.anta_midcta_inner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.anta_midcta_inner h2::after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: white;
+  display: block;
+  margin: 12px auto 0;
+}
+
+.anta_midcta_inner p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  font-weight: 300;
+  color: #ffffffcc;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 480px) {
+}
+
+
+/* ================= SECTION 7 — TOTAL TRIP COST ================= */
+.anta_total_section {
+  background: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.anta_total_inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.anta_total_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-bottom: 50px;
+}
+
+.anta_total_card {
+  background: #f8fafc;
+  padding: 40px 25px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.anta_total_card:hover {
+  transform: translateY(-8px);
+  background: #ffffff;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  border-color: #cbd5e1;
+}
+
+.anta_total_icon {
+  width: 60px;
+  height: 60px;
+  background: #2f4a6d11;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.anta_total_icon i {
+  font-size: 24px;
+  color: #2f4a6d;
+}
+
+.anta_total_card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #274472cc;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+}
+
+.anta_total_price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #2f4a6d;
+  margin-bottom: 8px;
+}
+
+.anta_total_card p {
+  font-size: 13px;
+  color: #27447288;
+  margin: 0;
+}
+
+/* TOTAL SUMMARY */
+.anta_total_summary {
+  background: #2f4a6d;
+  border-radius: 20px;
+  padding: 50px 40px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  box-shadow: 0 20px 40px rgba(47, 74, 109, 0.2);
+}
+
+.anta_summary_label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffffff99;
+  margin-bottom: 10px;
+}
+
+.anta_summary_value {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+
+.anta_summary_content p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #ffffffcc;
+  margin: 0;
+}
+
+.anta_summary_cta {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px 30px;
+  border-radius: 12px;
+  max-width: 350px;
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.anta_summary_cta i {
+  font-size: 20px;
+  color: #ffffff;
+  margin-top: 2px;
+}
+
+.anta_summary_cta span {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ffffffcc;
+}
+
+@media (max-width: 1024px) {
+  .anta_total_grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .anta_total_summary { flex-direction: column; text-align: center; gap: 30px; padding: 40px 30px; }
+  .anta_summary_cta { max-width: none; justify-content: center; }
+}
+
+@media (max-width: 768px) {
+  .anta_total_card { padding: 25px 20px; }
+  .anta_total_icon { width: 50px; height: 50px; margin-bottom: 15px; }
+  .anta_total_icon i { font-size: 20px; }
+  .anta_total_card h3 { font-size: 13px; margin-bottom: 10px; }
+  .anta_total_price { font-size: 22px; }
+  .anta_summary_value { font-size: 32px; }
+  .anta_summary_cta { flex-direction: column; align-items: center; padding: 15px 20px; }
+}
+
+@media (max-width: 480px) {
+  .anta_total_card { padding: 20px 15px; }
+  .anta_total_card h3{font-size: 12px;}
+  .anta_total_price { font-size: 18px; }
+  .anta_summary_label { font-size: 12px; }
+  .anta_summary_value { font-size: 20px; }
+  .anta_total_summary { padding: 30px 20px; }
+}
+
+
+/* ================= SECTION 8 — WHAT IMPACTS YOUR COST ================= */
+.anta_impacts_section {
+  background: #eef2f5;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.anta_impacts_inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.anta_impacts_inner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 500;
+  color: #2f4a6d;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.anta_impacts_inner h2::after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: #2f4a6d;
+  display: block;
+  margin: 12px auto 0;
+}
+
+.anta_impacts_inner p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  font-weight: 300;
+  color: #274472cc;
+  margin-top: 16px;
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  .anta_impacts_inner p{
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 480px) {
+  .anta_impacts_inner p{
+    font-size: 16px;
+  }
+}
+
+
+/* ================= SECTION 9 — WHY PRICES CHANGE QUICKLY ================= */
+.anta_pricing_section {
+  background: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.anta_pricing_inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.anta_pricing_inner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 500;
+  color: #2f4a6d;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.anta_pricing_inner h2::after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: #2f4a6d;
+  display: block;
+  margin: 12px auto 0;
+}
+
+.anta_pricing_inner p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  font-weight: 300;
+  color: #274472cc;
+  margin-top: 16px;
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  .anta_pricing_inner p{
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 480px) {
+  .anta_pricing_inner p{
+    font-size: 16px;
+  }
+}
+
+
+/* ================= SECTION 10 — WHAT YOU GET AT EACH LEVEL ================= */
+.anta_levels_section {
+  background: #eef2f5;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.anta_levels_inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.anta_levels_inner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 500;
+  color: #2f4a6d;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.anta_levels_inner h2::after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: #2f4a6d;
+  display: block;
+  margin: 12px auto 0;
+}
+
+@media (max-width: 1024px) {
+  .anta_levels_inner h2 { font-size: 36px; }
+}
+
+@media (max-width: 768px) {
+  .anta_levels_section { padding: 50px 15px; }
+  .anta_levels_inner h2 { font-size: 28px; }
+}
+
+@media (max-width: 480px) {
+  .anta_levels_inner h2 { font-size: 24px; }
+}
+
+
+/* ================= SECTION 11 — COMMON MISTAKES ================= */
+.anta_mistakes_section {
+  background: #f7f9fb;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.anta_mistakes_inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.anta_mistakes_inner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 500;
+  color: #2f4a6d;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.anta_mistakes_inner h2::after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: #2f4a6d;
+  display: block;
+  margin: 12px auto 0;
+}
+
+@media (max-width: 1024px) {
+  .anta_mistakes_inner h2 { font-size: 36px; }
+}
+
+@media (max-width: 768px) {
+  .anta_mistakes_section { padding: 50px 15px; }
+  .anta_mistakes_inner h2 { font-size: 28px; }
+}
+
+@media (max-width: 480px) {
+  .anta_mistakes_inner h2 { font-size: 24px; }
+}
+
+
+/* ================= SECTION 12 — WHY PRICED DIFFERENTLY ================= */
+.anta_why_section {
+  background: #ffffff;
+  padding: 80px 20px;
+}
+
+.anta_why_inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.anta_why_flex {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.anta_why_content {
+  text-align: left;
+}
+
+.anta_why_content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  font-weight: 500;
+  color: #2f4a6d;
+  margin-bottom: 24px;
+}
+
+.anta_why_content h2::after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: #2f4a6d;
+  display: block;
+  margin-top: 15px;
+}
+
+.anta_why_content p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #274472cc;
+  margin-bottom: 20px;
+}
+
+.anta_why_highlight_box {
+  background: #f8fafc;
+  padding: 24px;
+  border-left: 4px solid #2f4a6d;
+  border-radius: 0 8px 8px 0;
+  margin-top: 30px;
+}
+
+.anta_why_highlight_box p {
+  font-size: 1rem;
+  font-style: italic;
+  color: #2f4a6d;
+  margin-bottom: 0;
+}
+
+.anta_why_image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(39, 68, 114, 0.12);
+}
+
+@media (max-width: 1024px) {
+  .anta_why_flex { gap: 40px; }
+  .anta_why_content h2 { font-size: 32px; }
+  .anta_why_image img { height: 400px; }
+}
+
+@media (max-width: 768px) {
+  .anta_why_section { padding: 60px 15px; }
+  .anta_why_flex { grid-template-columns: 1fr; gap: 40px; }
+  .anta_why_content { text-align: center; order: 2; }
+  .anta_why_content h2::after { margin: 15px auto 0; }
+  .anta_why_image { order: 1; }
+  .anta_why_image img { height: 350px; }
+}
+
+@media (max-width: 480px) {
+  .anta_why_inner h2 { font-size: 24px; }
+  .anta_why_inner p { font-size: 1rem; }
+}
+
+
+/* ================= SECTION 13 — IS IT WORTH THE COST ================= */
+.anta_worth_section {
+  position: relative;
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #eef2f5;
+}
+
+.anta_worth_overlay {
+  display: none;
+}
+
+.anta_worth_inner {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.anta_worth_inner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 500;
+  color: #2f4a6d;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.anta_worth_inner h2::after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: #2f4a6d;
+  display: block;
+  margin: 12px auto 0;
+}
+
+.anta_worth_inner p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  font-weight: 300;
+  color: #274472cc;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .anta_worth_section { padding: 60px 15px; }
+  .anta_worth_inner h2 { font-size: 32px; }
+  .anta_worth_inner p{ font-size: 17px;}
+}
+
+@media (max-width: 480px) {
+  .anta_worth_inner h2 { font-size: 26px; }
+  .anta_worth_inner p{ font-size: 16px;}
+}
+
+
+/* ================= SECTION 13.5 — ANTARCTICA VIDEO SHOWCASE ================= */
+.anta_video_section {
+  padding: 80px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.anta_video_inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.anta_video_wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.anta_showcase_video {
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 40px 100px rgba(39, 68, 114, 0.18);
+  display: block;
+  border: 1px solid rgba(39, 68, 114, 0.05);
+}
+
+@media (max-width: 768px) {
+  .anta_video_section {
+    padding: 60px 15px;
+  }
+}
+
+
+/* ================= SECTION 14 — EXPERT INSIGHT ================= */
+.anta_insight_section {
+  position: relative;
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.anta_insight_overlay {
+  display: none;
+}
+
+.anta_insight_inner {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.anta_insight_inner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 500;
+  color: #2f4a6d;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.anta_insight_inner h2::after {
+  content: "";
+  width: 70px;
+  height: 2px;
+  background: #2f4a6d;
+  display: block;
+  margin: 14px auto 0;
+}
+
+.anta_insight_inner p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  font-weight: 300;
+  color: #274472cc;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .anta_insight_inner p{
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 480px) {
+  .anta_insight_inner p{
+    font-size: 16px;
+  }
+}
+
+
+/* ================= SECTION 15 — WHAT HAPPENS NEXT ================= */
+.anta_next_section {
+  background: #eef2f5;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.anta_next_inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.anta_next_inner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 500;
+  color: #2f4a6d;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.anta_next_inner h2::after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: #2f4a6d;
+  display: block;
+  margin: 12px auto 0;
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 480px) {
+}
+
+
+/* ================= SECTION 16 — WHY BOOK WITH ANGELA ================= */
+.anta_angela_section {
+  background: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.anta_angela_inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.anta_angela_inner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 500;
+  color: #2f4a6d;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.anta_angela_inner h2::after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: #2f4a6d;
+  display: block;
+  margin: 12px auto 0;
+}
+
+.anta_angela_inner p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  font-weight: 300;
+  color: #274472cc;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 480px) {
+  .anta_angela_inner p { font-size: 1rem; }
+}
+
+
+/* CSS for Section 17 was merged into Section 5 side-by-side layout above */
+
+
+/* ================= SECTION 18 — FAQ ================= */
+.anta_faq_section {
+  background: #eef2f5;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.anta_faq_inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.anta_faq_inner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 500;
+  color: #2f4a6d;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.anta_faq_inner h2::after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: #2f4a6d;
+  display: block;
+  margin: 12px auto 0;
+}
+
+.anta_faq_list {
+  text-align: left;
+}
+
+.anta_faq_item {
+  border-top: 1px solid #e4e9ee;
+  padding: 20px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.anta_faq_item:last-child {
+  border-bottom: 1px solid #e4e9ee;
+}
+
+.anta_faq_question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: #2f4a6d;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.anta_faq_icon {
+  font-size: 22px;
+  font-weight: 300;
+  color: #2f4a6d;
+  transition: transform 0.3s ease;
+}
+
+.anta_faq_answer {
+  font-size: 18px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: #274472cc;
+  font-family: 'Montserrat', sans-serif;
+  margin: 14px 0 0 0;
+}
+
+.anta_faq_item:hover .anta_faq_question {
+  color: #1a3a6d;
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  .anta_faq_question { font-size: 17px; }
+}
+
+@media (max-width: 480px) {
+  .anta_faq_question{font-size: 16px;}
+}
+
+
+/* ================= SECTION 19 — FINAL CTA ================= */
+.anta_finalcta_section {
+  position: relative;
+  padding: 100px 20px;
+  text-align: center;
+  color: white;
+  background: url("../../assets/antarctica-cruise-cost/anta6.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.anta_finalcta_overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.anta_finalcta_inner {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.anta_finalcta_inner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.anta_finalcta_inner h2::after {
+  content: "";
+  width: 70px;
+  height: 2px;
+  background: white;
+  display: block;
+  margin: 14px auto 0;
+}
+
+.anta_finalcta_inner p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  font-weight: 300;
+  color: #ffffffcc;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 768px) {
+  .anta_finalcta_inner p { font-size: 17px; }
+}
+
+@media (max-width: 480px) {
+  .anta_finalcta_inner p { font-size: 16px; }
+}
+
+/* ================= RESPONSIVE STANDARDIZATION — GLOBAL HEADINGS ================= */
+@media (max-width: 1200px) {
+  .anta_hero_inner h1 { font-size: 56px; }
+}
+
+@media (max-width: 1024px) {
+  .anta_hero_inner h1 { font-size: 48px; }
+  
+  /* Standard H2 across all sections */
+  .anta_overview_inner h2,
+  .anta_examples_inner h2,
+  .anta_ladder_inner h2,
+  .anta_clients_inner h2,
+  .anta_midcta_inner h2,
+  .anta_total_inner h2,
+  .anta_impacts_inner h2,
+  .anta_pricing_inner h2,
+  .anta_levels_inner h2,
+  .anta_mistakes_inner h2,
+  .anta_why_inner h2,
+  .anta_worth_inner h2,
+  .anta_insight_inner h2,
+  .anta_next_inner h2,
+  .anta_angela_inner h2,
+  .anta_author_inner h2,
+  .anta_faq_inner h2,
+  .anta_finalcta_inner h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .anta_hero_inner h1 { font-size: 32px; }
+  
+  /* Standard H2 across all sections */
+  .anta_overview_inner h2,
+  .anta_examples_inner h2,
+  .anta_ladder_inner h2,
+  .anta_clients_inner h2,
+  .anta_midcta_inner h2,
+  .anta_total_inner h2,
+  .anta_impacts_inner h2,
+  .anta_pricing_inner h2,
+  .anta_levels_inner h2,
+  .anta_mistakes_inner h2,
+  .anta_why_inner h2,
+  .anta_worth_inner h2,
+  .anta_insight_inner h2,
+  .anta_next_inner h2,
+  .anta_angela_inner h2,
+  .anta_author_inner h2,
+  .anta_faq_inner h2,
+  .anta_finalcta_inner h2 {
+    font-size: 28px;
+  }
+  
+  /* Standard Padding for Sections */
+  .anta_overview_section,
+  .anta_examples_section,
+  .anta_ladder_section,
+  .anta_clients_section,
+  .anta_midcta_section,
+  .anta_total_section,
+  .anta_impacts_section,
+  .anta_pricing_section,
+  .anta_levels_section,
+  .anta_mistakes_section,
+  .anta_why_section,
+  .anta_worth_section,
+  .anta_insight_section,
+  .anta_next_section,
+  .anta_angela_section,
+  .anta_author_section,
+  .anta_faq_section,
+  .anta_finalcta_section {
+    padding: 50px 15px;
+  }
+
+  .anta_tier_cards,
+  .anta_voyage_cards,
+  .anta_total_grid,
+  .anta_ladder_grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .anta_hero_inner h1 { font-size: 26px; }
+  
+  /* Standard H2 across all sections */
+  .anta_overview_inner h2,
+  .anta_examples_inner h2,
+  .anta_ladder_inner h2,
+  .anta_clients_inner h2,
+  .anta_midcta_inner h2,
+  .anta_total_inner h2,
+  .anta_impacts_inner h2,
+  .anta_pricing_inner h2,
+  .anta_levels_inner h2,
+  .anta_mistakes_inner h2,
+  .anta_why_inner h2,
+  .anta_worth_inner h2,
+  .anta_insight_inner h2,
+  .anta_next_inner h2,
+  .anta_angela_inner h2,
+  .anta_author_inner h2,
+  .anta_faq_inner h2,
+  .anta_finalcta_inner h2 {
+    font-size: 24px;
+  }
+
+  .anta_overview_section,
+  .anta_examples_section,
+  .anta_ladder_section,
+  .anta_clients_section,
+  .anta_midcta_section,
+  .anta_total_section,
+  .anta_impacts_section,
+  .anta_pricing_section,
+  .anta_levels_section,
+  .anta_mistakes_section,
+  .anta_why_section,
+  .anta_worth_section,
+  .anta_insight_section,
+  .anta_next_section,
+  .anta_angela_section,
+  .anta_author_section,
+  .anta_faq_section,
+  .anta_finalcta_section {
+    padding: 40px 15px;
+  }
+}
+
+/* =========================================================
+   SECTION 5 — WHERE MOST CLIENTS FALL (SIDE BY SIDE OVERRIDE)
+========================================================= */
+.anta_clients_section {
+  background: white;
+  padding: 80px 20px;
+}
+
+.anta_clients_inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.anta_clients_content {
+  text-align: left;
+}
+
+.anta_clients_content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  color: #2f4a6d;
+  margin-bottom: 24px;
+}
+
+.anta_clients_content p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #274472cc;
+  margin-bottom: 20px;
+}
+
+.anta_clients_highlight {
+  font-style: italic;
+  color: #2f4a6d !important;
+  font-weight: 500;
+  border-left: 4px solid #2f4a6d;
+  padding-left: 15px;
+  margin-top: 30px;
+}
+
+.anta_author_merge {
+  margin-top: 50px;
+  position: relative;
+}
+
+.anta_author_card {
+  background: #f8fafc;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 30px rgba(47, 74, 109, 0.05);
+}
+
+.anta_author_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 25px;
+  gap: 20px;
+}
+
+.anta_author_badge {
+  background: #2f4a6d;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.anta_author_merge h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  color: #2f4a6d;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.anta_author_role {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #2f4a6dcc;
+  margin: 0;
+}
+
+.anta_author_highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.anta_author_tag {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #274472cc;
+  line-height: 1.4;
+  background: white;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #edf2f7;
+}
+
+.anta_icon {
+  color: #2f4a6d;
+  flex-shrink: 0;
+}
+
+.anta_author_divider {
+  width: 100%;
+  height: 1px;
+  background: #e2e8f0;
+  margin-bottom: 35px;
+}
+
+.anta_author_merge h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #2f4a6d;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.anta_author_role {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #2f4a6d88;
+  margin-bottom: 25px;
+}
+
+.anta_author_highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.anta_clients_image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .anta_clients_inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  .anta_clients_content h2 {
+    font-size: 32px;
+  }
+  .anta_clients_content p {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 480px) {
+  .anta_clients_content p{
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .anta_clients_inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .anta_clients_content {
+    order: 2;
+    text-align: center;
+  }
+  .anta_clients_image {
+    order: 1;
+    margin: 0 auto;
+    max-width: 500px;
+  }
+  .anta_clients_content h2 {
+    font-size: 28px;
+    text-align: center;
+  }
+  .anta_clients_content p {
+    text-align: center;
+  }
+  .anta_clients_highlight {
+    border-left: none;
+    padding-left: 0;
+    padding-top: 15px;
+    margin-bottom: 40px;
+  }
+  .anta_author_header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .anta_author_highlights {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   BREADCRUMBS
+========================================================= */
+/* .page_breadcrumb {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.page_breadcrumb a {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.page_breadcrumb a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.page_breadcrumb span {
+  color: rgba(255, 255, 255, 0.9);
+} */
