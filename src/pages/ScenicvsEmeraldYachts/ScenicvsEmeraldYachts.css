@@ -514,7 +514,7 @@
 /* SECTION 6 */
 .Yachts_ship_section {
   position: relative;
-  background: url("../../assets/FourthPage/FourthPage4.jpg") center/cover no-repeat;
+  background: url("./assets/FourthPage/FourthPage4.webp") center/cover no-repeat;
   padding:60px 20px;
   text-align:center;
   overflow: hidden;
@@ -1224,7 +1224,7 @@
   padding: 100px 20px;
   text-align: center;
   color: white;
-  background:url('../../assets/FourthPage/FourthPage5.jpg');
+  background:url('./assets/FourthPage/FourthPage5.webp');
   overflow: hidden;
   background-repeat: no-repeat;
   background-size:cover;

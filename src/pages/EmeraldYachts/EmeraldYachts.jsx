@@ -118,7 +118,11 @@ const LuxuryPage = () => {
             className="Emerald_hero_bg fade"
             alt="Emerald Yachts Luxury"
             style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-            fetchPriority={current === 0 ? "high" : "auto"}
+            fetchPriority={current === 0 ? "high" : "low"}
+            loading={current === 0 ? "eager" : "lazy"}
+            decoding="async"
+            width="1920"
+            height={current === 0 ? "1280" : current === 1 ? "1440" : "1440"}
           />
         </div>
 

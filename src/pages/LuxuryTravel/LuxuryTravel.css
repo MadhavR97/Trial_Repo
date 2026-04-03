@@ -49,15 +49,15 @@
 
     0%,
     100% {
-        background-image: url(../../assets/LuxuryTravel/Hero1.jpeg);
+        background-image: url(./assets/LuxuryTravel/Hero1.webp);
     }
 
     33% {
-        background-image: url(../../assets/LuxuryTravel/Hero2.png);
+        background-image: url(./assets/LuxuryTravel/Hero2.webp);
     }
 
     66% {
-        background-image: url(../../assets/LuxuryTravel/Hero3.jpeg);
+        background-image: url(./assets/LuxuryTravel/Hero3.webp);
     }
 }
 
@@ -2969,7 +2969,7 @@ h3 {
     position: relative;
     padding: 140px 40px;
     /* Suggestion: Epic shot of the Scenic Eclipse at sea */
-    background: url(../../assets/LuxuryTravel/section11_bg.png) center/cover no-repeat;
+    background: url(./assets/LuxuryTravel/section11_bg.webp) center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;

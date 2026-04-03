@@ -86,15 +86,15 @@ body {
 
   0%,
   100% {
-    background-image: url('../../assets/DrakePassage/Hero1.jpeg');
+    background-image: url('./assets/DrakePassage/Hero1.webp');
   }
 
   33% {
-    background-image: url('../../assets/DrakePassage/Hero2.jpeg');
+    background-image: url('./assets/DrakePassage/Hero2.webp');
   }
 
   66% {
-    background-image: url('../../assets/DrakePassage/Hero3.jpeg');
+    background-image: url('./assets/DrakePassage/Hero3.webp');
   }
 }
 
@@ -3658,7 +3658,7 @@ h3 {
 .drake-final-cta-section {
   position: relative;
   padding: 120px 20px;
-  background: url('../../assets/DrakePassage/Footer_Image.jpeg') center/cover no-repeat;
+  background: url('./assets/DrakePassage/Footer_Image.webp') center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
