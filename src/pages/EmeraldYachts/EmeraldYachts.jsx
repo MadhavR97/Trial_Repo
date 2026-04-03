@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import Navbar from "../../components/Navbar/Navbar";
 import { Award, Globe, Newspaper, Quote, Star, Check, X } from "lucide-react";
-import myImage from "../../assets/image.jpg";
+import myImage from "../../assets/image.webp";
 import "./EmeraldYachts.css";
-import HomePage1 from "../../assets/HomePage/HomePage1.jpg";
-import HomePage3 from "../../assets/HomePage/HomePage3.jpg";
-import HomePage4 from "../../assets/HomePage/HomePage4.jpg";
-import HomePage2 from "../../assets/HomePage/HomePage2.jpg";
+import HomePage1 from "../../assets/HomePage/HomePage1.webp";
+import HomePage2 from "../../assets/HomePage/HomePage2.webp";
+import HomePage3 from "../../assets/HomePage/HomePage3.webp";
+import HomePage4 from "../../assets/HomePage/HomePage4.webp";
 
 const LuxuryPage = () => {
   const [current, setCurrent] = useState(0);
@@ -34,6 +34,7 @@ const LuxuryPage = () => {
           name="description"
           content="Discover Emerald Yachts boutique cruising in the Mediterranean and Caribbean. Expertly planned by Angela Hughes and Trips & Ships Luxury Travel for a seamless, elevated experience."
         />
+        <link rel="preload" as="image" href={HomePage1} />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -111,11 +112,14 @@ const LuxuryPage = () => {
       <section className="Emerald_hero_section">
         {/* BACKGROUND WRAPPER */}
         <div className="Emerald_hero_bg_wrapper">
-          <div
+          <img
             key={current}
+            src={images[current]}
             className="Emerald_hero_bg fade"
-            style={{ backgroundImage: `url(${images[current]})` }}
-          ></div>
+            alt="Emerald Yachts Luxury"
+            style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+            fetchPriority={current === 0 ? "high" : "auto"}
+          />
         </div>
 
         {/* OVERLAY */}
@@ -241,7 +245,14 @@ const LuxuryPage = () => {
 
             {/* RIGHT IMAGE */}
             <div className="Emerald_experience_image">
-              <img src={HomePage2} alt="Yacht Experience" />
+              <img 
+                src={HomePage2} 
+                alt="Yacht Experience" 
+                width="669" 
+                height="446" 
+                loading="lazy"
+                style={{ aspectRatio: "669 / 446" }}
+              />
             </div>
           </div>
         </div>
@@ -313,6 +324,10 @@ const LuxuryPage = () => {
                   src={myImage}
                   alt="Angela Hughes - CEO & Founder"
                   className="Emerald_insight_expert_image"
+                  width="665"
+                  height="665"
+                  loading="lazy"
+                  style={{ aspectRatio: "1 / 1" }}
                 />
               </div>
             </div>

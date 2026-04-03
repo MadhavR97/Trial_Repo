@@ -17,10 +17,10 @@ import {
 } from "lucide-react";
 import Navbar from "../../components/Navbar/Navbar";
 import "../ScenicVSSilversea/ScenicVSSilversea.css";
-import scenisilver5 from "../../assets/scenic-vs-silversea-antarctica/scenisilver5.jpg";
-import scenisilver1 from "../../assets/scenic-vs-silversea-antarctica/scenisilver1.jpeg";
-import scenisilver2 from "../../assets/scenic-vs-silversea-antarctica/scenisilver2.jpeg";
-import scenisilver3 from "../../assets/scenic-vs-silversea-antarctica/scenisilver3.jpg";
+import scenisilver5 from "../../assets/scenic-vs-silversea-antarctica/scenisilver5.webp";
+import scenisilver1 from "../../assets/scenic-vs-silversea-antarctica/scenisilver1.webp";
+import scenisilver2 from "../../assets/scenic-vs-silversea-antarctica/scenisilver2.webp";
+import scenisilver3 from "../../assets/scenic-vs-silversea-antarctica/scenisilver3.webp";
 import { Helmet } from "react-helmet";
 
 const AntarcticaPage = () => {
@@ -126,7 +126,7 @@ const AntarcticaPage = () => {
         primaryImageOfPage: {
           "@type": "ImageObject",
           contentUrl:
-            "https://www.tripsandships.com/path-to-comparison-image.jpg",
+            "https://www.tripsandships.com/path-to-comparison-image.webp",
         },
         breadcrumb: {
           "@id":
@@ -153,7 +153,7 @@ const AntarcticaPage = () => {
         url: "https://www.tripsandships.com/",
         logo: {
           "@type": "ImageObject",
-          contentUrl: "https://www.tripsandships.com/path-to-logo.png",
+          contentUrl: "https://www.tripsandships.com/path-to-logo.webp",
         },
         sameAs: [
           "https://www.luxuryhostagency.com/",

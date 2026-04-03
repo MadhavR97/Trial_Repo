@@ -4,10 +4,10 @@ import Navbar from "../../components/Navbar/Navbar";
 import { Plus, Minus } from "lucide-react";
 import { useState, useEffect } from "react";
 import "./ScenicvsEmeraldYachts.css";
-import myImage from "../../assets/image.jpg";
-import FourthPage1 from "../../assets/FourthPage/FourthPage1.jpg";
-import FourthPage2 from "../../assets/FourthPage/FourthPage2.jpeg";
-import FourthPage3 from "../../assets/FourthPage/FourthPage3.jpg";
+import myImage from "../../assets/image.webp";
+import FourthPage1 from "../../assets/FourthPage/FourthPage1.webp";
+import FourthPage2 from "../../assets/FourthPage/FourthPage2.webp";
+import FourthPage3 from "../../assets/FourthPage/FourthPage3.webp";
 
 function YachtsComparison() {
   const [current, setCurrent] = useState(0);
@@ -129,7 +129,7 @@ function YachtsComparison() {
                   "@id":
                     "https://www.tripsandships.com/scenic-vs-emerald-yachts#primaryimage",
                   contentUrl:
-                    "https://www.tripsandships.com/path-to-yacht-comparison-image.jpg",
+                    "https://www.tripsandships.com/path-to-yacht-comparison-image.webp",
                 },
                 breadcrumb: {
                   "@id":
@@ -164,7 +164,7 @@ function YachtsComparison() {
                 logo: {
                   "@type": "ImageObject",
                   "@id": "https://www.tripsandships.com/#logo",
-                  contentUrl: "https://www.tripsandships.com/path-to-logo.png",
+                  contentUrl: "https://www.tripsandships.com/path-to-logo.webp",
                 },
                 description:
                   "Luxury travel agency specializing in yacht cruises, expedition travel, and high-end global experiences.",

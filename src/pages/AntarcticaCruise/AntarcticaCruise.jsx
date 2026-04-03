@@ -3,12 +3,12 @@ import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import "../AntarcticaCruise/AntarcticaCruise.css";
-import myImage from "../../assets/image.jpg";
+import myImage from "../../assets/image.webp";
 import { Award, Globe, Shield, Star } from "lucide-react";
-import anta1 from "../../assets/antarctica-cruise-cost/anta1.jpg";
-import anta2 from "../../assets/antarctica-cruise-cost/anta2.jpg";
-import anta3 from "../../assets/antarctica-cruise-cost/anta3.jpg";
-import anta5 from "../../assets/antarctica-cruise-cost/anta5.jpg";
+import anta1 from "../../assets/antarctica-cruise-cost/anta1.webp";
+import anta2 from "../../assets/antarctica-cruise-cost/anta2.webp";
+import anta3 from "../../assets/antarctica-cruise-cost/anta3.webp";
+import anta5 from "../../assets/antarctica-cruise-cost/anta5.webp";
 
 const AntarcticaCostPage = () => {
   const [current, setCurrent] = useState(0);
@@ -50,7 +50,7 @@ const AntarcticaCostPage = () => {
           "@id":
             "https://www.tripsandships.com/antarctica-cruise-cost#primaryimage",
           contentUrl:
-            "https://www.tripsandships.com/path-to-antarctica-cost-hero-image.jpg",
+            "https://www.tripsandships.com/path-to-antarctica-cost-hero-image.webp",
         },
         author: { "@id": "https://www.tripsandships.com/#angela-hughes" },
         publisher: { "@id": "https://www.tripsandships.com/#organization" },
@@ -74,7 +74,7 @@ const AntarcticaCostPage = () => {
         logo: {
           "@type": "ImageObject",
           "@id": "https://www.tripsandships.com/#logo",
-          contentUrl: "https://www.tripsandships.com/path-to-logo.png",
+          contentUrl: "https://www.tripsandships.com/path-to-logo.webp",
         },
         description:
           "Luxury travel agency specializing in expedition cruises, Antarctica travel, and high-end global experiences.",

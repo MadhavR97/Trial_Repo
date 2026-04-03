@@ -1,32 +1,30 @@
-import React from 'react'
-import EmeraldYachts from '../src/pages/EmeraldYachts/EmeraldYachts'
-import DrakePassagePage from '../src/pages/DrakePassagePage/DrakePassagePage'
-import ScenicVSSilversea from '../src/pages/ScenicVSSilversea/ScenicVSSilversea'
-import AntarcticaCruise from '../src/pages/AntarcticaCruise/AntarcticaCruise'
-import ScenicAntarctica from '../src/pages/ScenicAntarctica/ScenicAntarctica'
-import ScenicvsEmeraldYachts from '../src/pages/ScenicvsEmeraldYachts/ScenicvsEmeraldYachts'
-import { BrowserRouter } from 'react-router-dom'
-import { Routes } from 'react-router-dom'
-import { Route } from 'react-router-dom'
-import LuxuryTravel from './pages/LuxuryTravel/LuxuryTravel'
-import Navbar from './components/Navbar/Navbar'
+import React, { Suspense, lazy } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+const EmeraldYachts = lazy(() => import('../src/pages/EmeraldYachts/EmeraldYachts'));
+const DrakePassagePage = lazy(() => import('../src/pages/DrakePassagePage/DrakePassagePage'));
+const ScenicVSSilversea = lazy(() => import('../src/pages/ScenicVSSilversea/ScenicVSSilversea'));
+const AntarcticaCruise = lazy(() => import('../src/pages/AntarcticaCruise/AntarcticaCruise'));
+const ScenicAntarctica = lazy(() => import('../src/pages/ScenicAntarctica/ScenicAntarctica'));
+const ScenicvsEmeraldYachts = lazy(() => import('../src/pages/ScenicvsEmeraldYachts/ScenicvsEmeraldYachts'));
+const LuxuryTravel = lazy(() => import('./pages/LuxuryTravel/LuxuryTravel'));
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Suspense fallback={<div style={{ padding: '20px', textAlign: 'center' }}>Loading...</div>}>
         <Routes>
-          <Route path='/' element={<EmeraldYachts />}></Route>
-          <Route path='/DrakePassagePage' element={<DrakePassagePage />}></Route>
-          <Route path='/scenic-vs-silversea-antarctica' element={<ScenicVSSilversea />}></Route>
-          <Route path='/antarctica-cruise-cost' element={<AntarcticaCruise />}></Route>
-          <Route path='/scenic-antarctica-cruise' element={<ScenicAntarctica />}></Route>
-          <Route path='/luxury-travel' element={<LuxuryTravel />}></Route>
-          <Route path='/ScenicvsEmeraldYachts' element={<ScenicvsEmeraldYachts />}></Route>
+          <Route path='/' element={<EmeraldYachts />} />
+          <Route path='/DrakePassagePage' element={<DrakePassagePage />} />
+          <Route path='/scenic-vs-silversea-antarctica' element={<ScenicVSSilversea />} />
+          <Route path='/antarctica-cruise-cost' element={<AntarcticaCruise />} />
+          <Route path='/scenic-antarctica-cruise' element={<ScenicAntarctica />} />
+          <Route path='/luxury-travel' element={<LuxuryTravel />} />
+          <Route path='/ScenicvsEmeraldYachts' element={<ScenicvsEmeraldYachts />} />
         </Routes>
-      </BrowserRouter>
-    </>
-  )
+      </Suspense>
+    </BrowserRouter>
+  );
 }
 
 export default App

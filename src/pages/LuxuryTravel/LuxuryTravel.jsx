@@ -13,15 +13,15 @@ import {
 } from "lucide-react";
 
 // Import Images
-import ProfilePicture from "../../assets/image.jpg";
-import Hero1Img from "../../assets/LuxuryTravel/Hero1.jpeg";
-import Hero2Img from "../../assets/LuxuryTravel/Hero2.png";
-import Hero3Img from "../../assets/LuxuryTravel/Hero3.jpeg";
-import Section2Image1 from "../../assets/LuxuryTravel/section2_image1.jpeg";
-import Section6Bg from "../../assets/LuxuryTravel/section6_bg.jpeg";
-import Section6Image2 from "../../assets/LuxuryTravel/section6_image2.jpeg";
-import Section7Image from "../../assets/LuxuryTravel/section7_image.png";
-import Section11Bg from "../../assets/LuxuryTravel/section11_bg.png";
+import ProfilePicture from "../../assets/image.webp";
+import Hero1Img from "../../assets/LuxuryTravel/Hero1.webp";
+import Hero2Img from "../../assets/LuxuryTravel/Hero2.webp";
+import Hero3Img from "../../assets/LuxuryTravel/Hero3.webp";
+import Section2Image1 from "../../assets/LuxuryTravel/section2_image1.webp";
+import Section6Bg from "../../assets/LuxuryTravel/section6_bg.webp";
+import Section6Image2 from "../../assets/LuxuryTravel/section6_image2.webp";
+import Section7Image from "../../assets/LuxuryTravel/section7_image.webp";
+import Section11Bg from "../../assets/LuxuryTravel/section11_bg.webp";
 
 // --- FAQ Component Logic ---
 function FAQComponent() {
@@ -125,7 +125,7 @@ function LuxuryTravel() {
                 logo: {
                   "@type": "ImageObject",
                   "@id": "https://www.tripsandships.com/#logo",
-                  url: "https://www.tripsandships.com/logo.png",
+                  url: "https://www.tripsandships.com/logo.webp",
                 },
               },
               {

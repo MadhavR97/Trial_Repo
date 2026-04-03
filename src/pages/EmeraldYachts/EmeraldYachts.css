@@ -22,15 +22,17 @@
 .Emerald_hero_bg {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: opacity, transform;
 }
 
 /* FADE + ZOOM EFFECT */
 .Emerald_hero_bg.fade {
   opacity: 0;
-  animation: emeraldFade 1.5s ease forwards,
-             emeraldZoom 8s ease forwards;
+  animation: emeraldFade 0.8s ease forwards,
+             emeraldZoom 12s linear forwards;
 }
 
 /* FADE */

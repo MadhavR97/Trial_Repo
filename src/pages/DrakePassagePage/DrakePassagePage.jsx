@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
 import Navbar from "../../components/Navbar/Navbar";
 import "../../pages/DrakePassagePage/DrakePassagePage.css";
-import ProfilePicture from "../../assets/image.jpg";
+import ProfilePicture from "../../assets/image.webp";
 import {
   Anchor,
   Ship,
@@ -19,18 +19,18 @@ import {
 } from "lucide-react";
 
 // Import all Drake Passage images from assets folder
-import section1_Image from "../../assets/DrakePassage/section1_image.png";
-import section2_Image1 from "../../assets/DrakePassage/section2_image1.png";
-import section2_Image2 from "../../assets/DrakePassage/section2_image2.png";
-import section3_Image1 from "../../assets/DrakePassage/section3_image1.png";
-import section3_Image2 from "../../assets/DrakePassage/section3_image2.jpeg";
-import section5_Image1 from "../../assets/DrakePassage/section5_image1.jpeg";
-import section6_Image1 from "../../assets/DrakePassage/section06_image1.jpeg";
-import section6_Image2 from "../../assets/DrakePassage/section06_image2.jpeg";
-import section8_Image1 from "../../assets/DrakePassage/section8_image1.png";
-import section8_Image2 from "../../assets/DrakePassage/section8_image2.jpeg";
-import section8_Image3 from "../../assets/DrakePassage/section8_image3.jpeg";
-import section8_Image4 from "../../assets/DrakePassage/section8_image4.jpeg";
+import section1_Image from "../../assets/DrakePassage/section1_image.webp";
+import section2_Image1 from "../../assets/DrakePassage/section2_image1.webp";
+import section2_Image2 from "../../assets/DrakePassage/section2_image2.webp";
+import section3_Image1 from "../../assets/DrakePassage/section3_image1.webp";
+import section3_Image2 from "../../assets/DrakePassage/section3_image2.webp";
+import section5_Image1 from "../../assets/DrakePassage/section5_image1.webp";
+import section6_Image1 from "../../assets/DrakePassage/section06_image1.webp";
+import section6_Image2 from "../../assets/DrakePassage/section06_image2.webp";
+import section8_Image1 from "../../assets/DrakePassage/section8_image1.webp";
+import section8_Image2 from "../../assets/DrakePassage/section8_image2.webp";
+import section8_Image3 from "../../assets/DrakePassage/section8_image3.webp";
+import section8_Image4 from "../../assets/DrakePassage/section8_image4.webp";
 
 function useFadeIn() {
   const ref = useRef(null);
